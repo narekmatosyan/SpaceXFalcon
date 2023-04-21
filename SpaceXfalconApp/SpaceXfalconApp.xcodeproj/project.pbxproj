@@ -12,6 +12,9 @@
 		97768A4E29EE966E006B883B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A4D29EE966E006B883B /* ViewController.swift */; };
 		97768A5329EE966F006B883B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97768A5229EE966F006B883B /* Assets.xcassets */; };
 		97768A5629EE966F006B883B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97768A5429EE966F006B883B /* LaunchScreen.storyboard */; };
+		97768A5F29EF021F006B883B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 97768A5E29EF021F006B883B /* SnapKit */; };
+		97768A6129EF0347006B883B /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6029EF0347006B883B /* RocketView.swift */; };
+		97768A6329F17340006B883B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6229F17340006B883B /* UIColor+hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,8 @@
 		97768A5229EE966F006B883B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97768A5529EE966F006B883B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97768A5729EE966F006B883B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97768A6029EF0347006B883B /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
+		97768A6229F17340006B883B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97768A5F29EF021F006B883B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +63,11 @@
 				97768A4929EE966E006B883B /* AppDelegate.swift */,
 				97768A4B29EE966E006B883B /* SceneDelegate.swift */,
 				97768A4D29EE966E006B883B /* ViewController.swift */,
+				97768A6029EF0347006B883B /* RocketView.swift */,
 				97768A5229EE966F006B883B /* Assets.xcassets */,
 				97768A5429EE966F006B883B /* LaunchScreen.storyboard */,
 				97768A5729EE966F006B883B /* Info.plist */,
+				97768A6229F17340006B883B /* UIColor+hex.swift */,
 			);
 			path = SpaceXfalconApp;
 			sourceTree = "<group>";
@@ -80,6 +88,9 @@
 			dependencies = (
 			);
 			name = SpaceXfalconApp;
+			packageProductDependencies = (
+				97768A5E29EF021F006B883B /* SnapKit */,
+			);
 			productName = SpaceXfalconApp;
 			productReference = 97768A4629EE966E006B883B /* SpaceXfalconApp.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 97768A3D29EE966E006B883B;
+			packageReferences = (
+				97768A5D29EF021F006B883B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 97768A4729EE966E006B883B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				97768A4E29EE966E006B883B /* ViewController.swift in Sources */,
+				97768A6129EF0347006B883B /* RocketView.swift in Sources */,
+				97768A6329F17340006B883B /* UIColor+hex.swift in Sources */,
 				97768A4A29EE966E006B883B /* AppDelegate.swift in Sources */,
 				97768A4C29EE966E006B883B /* SceneDelegate.swift in Sources */,
 			);
@@ -350,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97768A5D29EF021F006B883B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97768A5E29EF021F006B883B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97768A5D29EF021F006B883B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97768A3E29EE966E006B883B /* Project object */;
 }
