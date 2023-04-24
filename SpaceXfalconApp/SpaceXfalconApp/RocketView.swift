@@ -11,6 +11,7 @@ import SnapKit
 protocol RocketViewDelegate {
     func didTapButton()
 }
+
 class RocketView: UIView {
     
     var delegate: RocketViewDelegate?
