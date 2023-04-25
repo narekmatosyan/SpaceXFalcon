@@ -11,17 +11,20 @@ import SnapKit
 protocol RocketViewDelegate {
     func didTapButton()
 }
-
 class RocketView: UIView {
     
     var delegate: RocketViewDelegate?
     let scrollView = UIScrollView()
-    let button = UIButton()
+    //let lauchStoryButton = UIButton()
+    //let rocketImgView = UIImageView()
+    
     
     init() {
         super.init(frame: .zero)
+        
         setupScrollView()
-        setupButton()
+        //setupButton()
+        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -29,22 +32,24 @@ class RocketView: UIView {
     
     func setupScrollView() {
         addSubview(scrollView)
+        
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
-    
+}
+
+    /*
     func setupButton() {
-        addSubview(button)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        button.snp.makeConstraints{ maker in
+        addSubview(lauchStoryButton)
+        
+        lauchStoryButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        lauchStoryButton.snp.makeConstraints{ maker in
             maker.center.equalToSuperview()
             maker.width.equalTo(250)
             maker.height.equalTo(320)
+
         }
-    }
     @objc func didTapButton() {
-        
         delegate?.didTapButton()
-    }
-}
+    */
