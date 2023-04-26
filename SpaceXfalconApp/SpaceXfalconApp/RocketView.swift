@@ -22,20 +22,12 @@ class RocketView: UIView {
     init() {
         super.init(frame: .zero)
         
-        setupScrollView()
+        //setupScrollView()
         //setupButton()
         
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupScrollView() {
-        addSubview(scrollView)
-        
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
 }
 

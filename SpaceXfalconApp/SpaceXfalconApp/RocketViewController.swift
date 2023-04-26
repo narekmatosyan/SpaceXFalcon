@@ -9,59 +9,96 @@ import UIKit
 import SnapKit
 
 class RocketViewController: UIViewController {
-    let rocketImgView = UIImageView()
+    
+    let rocketImageView = UIImageView()
     let scrollView = UIScrollView()
-    let settingsIcon = UIImageView()
+    let settingsIconButton = UIButton()
     let lauchStoryButton = UIButton()
     let rocketNameLabel = UILabel()
-    var blackView: UIView!
+    var blackView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRocketImageView()
+        setupBlackView()
+        setupRocketNameLabel()
+        setupLaunchStoryButton()
+        setupSettingsIcon()
+        setupScrollView()
+        
+        
+        func setupScrollView() {
+            view.addSubview(scrollView)
+            scrollView.snp.makeConstraints {
+                $0.edges.equalToSuperview()
+            }
+        }
         
         func setupRocketImageView() {
-            scrollView.addSubview(rocketImgView)
-            rocketImgView.frame = CGRect(x: 0, y: 0, width: 400, height: 627)
-            rocketImgView.image = UIImage(named: "BackgroundPic")
-            rocketImgView.layer.cornerRadius = 10
+            scrollView.addSubview(rocketImageView)
+            //CONSTR
+            rocketImageView.image = UIImage(named: "BackgroundPic")
+            rocketImageView.layer.cornerRadius = 10
+            rocketImageView.snp.makeConstraints { maker in
+                //maker.center.equalToSuperview()
+                maker.width.equalTo(400)
+                maker.height.equalTo(627)
+            }
         }
         
         func setupBlackView() {
-            blackView = UIView(frame: CGRect(x: 0, y: 310, width: view.bounds.size.width, height: view.bounds.size.height))
+            // CONSTR
             blackView.layer.cornerRadius = 32
             blackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             blackView.backgroundColor = UIColor.black
-            view.addSubview(blackView) }
-        
+            scrollView.addSubview(blackView)
+            //blackView.snp.bottom.equalsTo(blackView)
+            blackView.snp.makeConstraints{ maker in
+                maker.width.equalTo(400)
+                maker.height.equalTo(250)
+                maker.bottom.equalTo(rocketImageView)
+                
+                
+            }
+        }
         //let label = UILabel(frame: CGRect(x: 60, y: 296, width: 200, height: 70))
         func setupRocketNameLabel() {
-            rocketNameLabel.center = CGPoint(x: 95, y: 370)
+            // CONSTR
             rocketNameLabel.textAlignment = .center
             rocketNameLabel.text = "Falcon Heavy"
             rocketNameLabel.textColor = .white
             rocketNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
-            view.addSubview(rocketNameLabel)
-            self.view.addSubview(rocketNameLabel)
+            blackView.addSubview(rocketNameLabel)
+            rocketNameLabel.snp.makeConstraints { maker in
+                maker.width.equalTo(150)
+                maker.height.equalTo(90)
+                maker.leading.equalTo(20)
+            }
         }
         
         func setupSettingsIcon() {
-            settingsIcon.frame = CGRect(x: 320, y: 355, width: 32, height: 32)
-            settingsIcon.image = UIImage(named: "Setting")
-            view.addSubview(blackView)
-            self.view.addSubview(settingsIcon)}
+            settingsIconButton.setImage(UIImage(named:"Setting"), for: .normal)
+            scrollView.addSubview(blackView)
+            self.blackView.addSubview(settingsIconButton)
+            settingsIconButton.snp.makeConstraints { maker in
+                maker.height.equalTo(90)
+                maker.width.equalTo(150)
+                maker.trailing.equalTo(20)
+            }
+        }
         
         func setupLaunchStoryButton() {
-            lauchStoryButton.frame = CGRect(x: 11, y: 420, width: 367, height: 60)
             lauchStoryButton.layer.cornerRadius = 20
             lauchStoryButton.backgroundColor = UIColor(hexString: "#212121")
             lauchStoryButton.setTitle( "Посмотреть запуски", for: .normal)
             lauchStoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-            view.addSubview(lauchStoryButton)
+            blackView.addSubview(lauchStoryButton)
+            lauchStoryButton.snp.makeConstraints { maker in
+                maker.width.equalTo(320)
+                maker.height.equalTo(60)
+                maker.top.equalTo(90)
+                maker.leading.equalTo(32)
+            }
         }
     }
 }
-/*extension UIImageView {
- func imgViewCorners() {
- layer.cornerRadius = 10
- layer.borderWidth = 1.0
- layer.masksToBounds = true}}*/
