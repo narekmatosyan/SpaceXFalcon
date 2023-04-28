@@ -6,3 +6,7 @@
 //
 
 import UIKit
+
+extension UIColor {
+    static let rocketGray = UIColor(hexString: "#212121")
+}
