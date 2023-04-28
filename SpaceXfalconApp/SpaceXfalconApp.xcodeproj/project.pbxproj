@@ -15,6 +15,7 @@
 		97768A5F29EF021F006B883B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 97768A5E29EF021F006B883B /* SnapKit */; };
 		97768A6129EF0347006B883B /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6029EF0347006B883B /* RocketView.swift */; };
 		97768A6329F17340006B883B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6229F17340006B883B /* UIColor+hex.swift */; };
+		97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6929FBE2EF006B883B /* UIColor+Styling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		97768A5729EE966F006B883B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97768A6029EF0347006B883B /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
 		97768A6229F17340006B883B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		97768A6929FBE2EF006B883B /* UIColor+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +66,21 @@
 				97768A4B29EE966E006B883B /* SceneDelegate.swift */,
 				97768A4D29EE966E006B883B /* RocketViewController.swift */,
 				97768A6029EF0347006B883B /* RocketView.swift */,
+				97768A6829FBE2C5006B883B /* Extensions */,
 				97768A5229EE966F006B883B /* Assets.xcassets */,
 				97768A5429EE966F006B883B /* LaunchScreen.storyboard */,
 				97768A5729EE966F006B883B /* Info.plist */,
-				97768A6229F17340006B883B /* UIColor+hex.swift */,
 			);
 			path = SpaceXfalconApp;
+			sourceTree = "<group>";
+		};
+		97768A6829FBE2C5006B883B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97768A6229F17340006B883B /* UIColor+hex.swift */,
+				97768A6929FBE2EF006B883B /* UIColor+Styling.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				97768A6129EF0347006B883B /* RocketView.swift in Sources */,
 				97768A6329F17340006B883B /* UIColor+hex.swift in Sources */,
 				97768A4A29EE966E006B883B /* AppDelegate.swift in Sources */,
+				97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */,
 				97768A4C29EE966E006B883B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
