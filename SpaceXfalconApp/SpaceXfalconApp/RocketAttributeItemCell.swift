@@ -34,8 +34,7 @@ class RocketAttributeItemCell: UITableViewCell {
     
     func setupTitleLabel() {
         titleLabel.textColor = .lightGray
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        titleLabel.font = UIFont(name: "Lab Grotesque" , size: 16)
+        titleLabel.font = UIFont(name: "Lab Grotesque", size: 16)
         titleLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.leading.equalToSuperview()
@@ -44,7 +43,7 @@ class RocketAttributeItemCell: UITableViewCell {
     
     func setupValueLabel() {
         valueLabel.textColor = .specWhite
-        valueLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        valueLabel.font = UIFont(name: "Lab Grotesque", size: 16)
         valueLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.trailing.equalToSuperview()
@@ -54,7 +53,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func update(cellType: CellType, title: String, value: String? = nil) {
         switch cellType {
         case .header:
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            titleLabel.font = UIFont(name: "LabGrotesque-Bold", size: 16)
             titleLabel.textColor = .specWhite
         case .item:
             break
@@ -66,6 +65,6 @@ class RocketAttributeItemCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.font = UIFont(name: "Lab Grotesque", size: 16)
     }
 }
