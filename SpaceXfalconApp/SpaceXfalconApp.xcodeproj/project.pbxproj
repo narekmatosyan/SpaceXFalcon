@@ -18,6 +18,8 @@
 		97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6929FBE2EF006B883B /* UIColor+Styling.swift */; };
 		97768A6C29FC2179006B883B /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6B29FC2179006B883B /* RocketViewModel.swift */; };
 		97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6D29FC21F3006B883B /* RocketModel.swift */; };
+		97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */; };
+		97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A752A03D3AE006B883B /* RocketAttributesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		97768A6929FBE2EF006B883B /* UIColor+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styling.swift"; sourceTree = "<group>"; };
 		97768A6B29FC2179006B883B /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		97768A6D29FC21F3006B883B /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
+		97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributeItemCell.swift; sourceTree = "<group>"; };
+		97768A752A03D3AE006B883B /* RocketAttributesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				97768A5729EE966F006B883B /* Info.plist */,
 				97768A6B29FC2179006B883B /* RocketViewModel.swift */,
 				97768A6D29FC21F3006B883B /* RocketModel.swift */,
+				97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */,
+				97768A752A03D3AE006B883B /* RocketAttributesModel.swift */,
 			);
 			path = SpaceXfalconApp;
 			sourceTree = "<group>";
@@ -167,10 +173,12 @@
 			files = (
 				97768A4E29EE966E006B883B /* RocketViewController.swift in Sources */,
 				97768A6129EF0347006B883B /* RocketView.swift in Sources */,
+				97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */,
 				97768A6329F17340006B883B /* UIColor+hex.swift in Sources */,
 				97768A4A29EE966E006B883B /* AppDelegate.swift in Sources */,
 				97768A6C29FC2179006B883B /* RocketViewModel.swift in Sources */,
 				97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */,
+				97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */,
 				97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */,
 				97768A4C29EE966E006B883B /* SceneDelegate.swift in Sources */,
 			);
