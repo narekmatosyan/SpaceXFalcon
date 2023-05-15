@@ -14,7 +14,6 @@ protocol RocketViewDelegate {
 }
 
 class RocketView: UIView {
-    
     var delegate: RocketViewDelegate?
     
     let firstSectionTitles = ["Первый запуск", "Страна", "Стоимость запуска", ""]
@@ -25,7 +24,6 @@ class RocketView: UIView {
     let thirdSectionValues = ["1", "243,2","397"]
     
     let rocketImageView = UIImageView()
-    let scrollView = UIScrollView()
     let settingsButton = UIButton()
     let launchHistoryButton = UIButton()
     let rocketNameLabel = UILabel()

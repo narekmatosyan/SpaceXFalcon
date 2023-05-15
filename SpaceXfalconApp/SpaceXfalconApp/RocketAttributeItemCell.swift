@@ -18,7 +18,7 @@ class RocketAttributeItemCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let valueLabel = UILabel()
     
-    override init (style: UITableViewCell.CellStyle, reuseIdentifier:  String?) {
+    override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .black
         contentView.addSubview(titleLabel)
