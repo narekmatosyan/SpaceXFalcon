@@ -30,6 +30,7 @@ class RocketViewController: UIViewController {
 extension RocketViewController: RocketViewDelegate {
     func didTapHistoryButton() {
     }
+    
     func didTapSettingsButton() {
     }
 }
