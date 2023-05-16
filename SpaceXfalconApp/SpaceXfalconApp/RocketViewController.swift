@@ -17,7 +17,6 @@ class RocketViewController: UIViewController {
         
         rocketView.delegate = self
         setupRocketView()
-        
     }
     
     func setupRocketView() {
@@ -30,11 +29,8 @@ class RocketViewController: UIViewController {
 }
 extension RocketViewController: RocketViewDelegate {
     func didTapHistoryButton() {
-        
     }
     
     func didTapSettingsButton() {
-        
     }
 }
-                               

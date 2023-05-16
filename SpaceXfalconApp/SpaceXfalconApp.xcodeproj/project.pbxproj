@@ -18,6 +18,10 @@
 		97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6929FBE2EF006B883B /* UIColor+Styling.swift */; };
 		97768A6C29FC2179006B883B /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6B29FC2179006B883B /* RocketViewModel.swift */; };
 		97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6D29FC21F3006B883B /* RocketModel.swift */; };
+		97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */; };
+		97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A752A03D3AE006B883B /* RocketAttributesModel.swift */; };
+		97A7B1042A12A9F0007EF824 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */; };
+		97A7B1062A12AA10007EF824 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		97768A6929FBE2EF006B883B /* UIColor+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styling.swift"; sourceTree = "<group>"; };
 		97768A6B29FC2179006B883B /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		97768A6D29FC21F3006B883B /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
+		97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributeItemCell.swift; sourceTree = "<group>"; };
+		97768A752A03D3AE006B883B /* RocketAttributesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributesModel.swift; sourceTree = "<group>"; };
+		97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
+		97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 		97768A4829EE966E006B883B /* SpaceXfalconApp */ = {
 			isa = PBXGroup;
 			children = (
+				97A7B1022A12A9D1007EF824 /* Resources */,
 				97768A4929EE966E006B883B /* AppDelegate.swift */,
 				97768A4B29EE966E006B883B /* SceneDelegate.swift */,
 				97768A4D29EE966E006B883B /* RocketViewController.swift */,
@@ -76,6 +85,8 @@
 				97768A5729EE966F006B883B /* Info.plist */,
 				97768A6B29FC2179006B883B /* RocketViewModel.swift */,
 				97768A6D29FC21F3006B883B /* RocketModel.swift */,
+				97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */,
+				97768A752A03D3AE006B883B /* RocketAttributesModel.swift */,
 			);
 			path = SpaceXfalconApp;
 			sourceTree = "<group>";
@@ -87,6 +98,15 @@
 				97768A6929FBE2EF006B883B /* UIColor+Styling.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97A7B1022A12A9D1007EF824 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */,
+				97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				97768A5629EE966F006B883B /* LaunchScreen.storyboard in Resources */,
+				97A7B1062A12AA10007EF824 /* LabGrotesque-Regular.ttf in Resources */,
+				97A7B1042A12A9F0007EF824 /* LabGrotesque-Bold.ttf in Resources */,
 				97768A5329EE966F006B883B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,10 +189,12 @@
 			files = (
 				97768A4E29EE966E006B883B /* RocketViewController.swift in Sources */,
 				97768A6129EF0347006B883B /* RocketView.swift in Sources */,
+				97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */,
 				97768A6329F17340006B883B /* UIColor+hex.swift in Sources */,
 				97768A4A29EE966E006B883B /* AppDelegate.swift in Sources */,
 				97768A6C29FC2179006B883B /* RocketViewModel.swift in Sources */,
 				97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */,
+				97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */,
 				97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */,
 				97768A4C29EE966E006B883B /* SceneDelegate.swift in Sources */,
 			);
