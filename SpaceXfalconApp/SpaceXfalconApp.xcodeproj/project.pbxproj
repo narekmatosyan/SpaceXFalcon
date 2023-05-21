@@ -16,12 +16,14 @@
 		97768A6129EF0347006B883B /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6029EF0347006B883B /* RocketView.swift */; };
 		97768A6329F17340006B883B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6229F17340006B883B /* UIColor+hex.swift */; };
 		97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6929FBE2EF006B883B /* UIColor+Styling.swift */; };
-		97768A6C29FC2179006B883B /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6B29FC2179006B883B /* RocketViewModel.swift */; };
 		97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6D29FC21F3006B883B /* RocketModel.swift */; };
 		97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */; };
 		97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A752A03D3AE006B883B /* RocketAttributesModel.swift */; };
 		97A7B1042A12A9F0007EF824 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */; };
 		97A7B1062A12AA10007EF824 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */; };
+		97A7D6AC2A13AC7E00C9E904 /* SpaceXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D6AB2A13AC7E00C9E904 /* SpaceXService.swift */; };
+		97A7D6AF2A13AD4300C9E904 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 97A7D6AE2A13AD4300C9E904 /* Alamofire */; };
+		97A7D6B12A13AF5300C9E904 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +37,13 @@
 		97768A6029EF0347006B883B /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
 		97768A6229F17340006B883B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		97768A6929FBE2EF006B883B /* UIColor+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styling.swift"; sourceTree = "<group>"; };
-		97768A6B29FC2179006B883B /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		97768A6D29FC21F3006B883B /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributeItemCell.swift; sourceTree = "<group>"; };
 		97768A752A03D3AE006B883B /* RocketAttributesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributesModel.swift; sourceTree = "<group>"; };
 		97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
+		97A7D6AB2A13AC7E00C9E904 /* SpaceXService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXService.swift; sourceTree = "<group>"; };
+		97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RocketViewModel.swift; path = ../RocketViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97768A5F29EF021F006B883B /* SnapKit in Frameworks */,
+				97A7D6AF2A13AD4300C9E904 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,13 +81,14 @@
 				97A7B1022A12A9D1007EF824 /* Resources */,
 				97768A4929EE966E006B883B /* AppDelegate.swift */,
 				97768A4B29EE966E006B883B /* SceneDelegate.swift */,
+				97A7D6AB2A13AC7E00C9E904 /* SpaceXService.swift */,
 				97768A4D29EE966E006B883B /* RocketViewController.swift */,
 				97768A6029EF0347006B883B /* RocketView.swift */,
+				97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */,
 				97768A6829FBE2C5006B883B /* Extensions */,
 				97768A5229EE966F006B883B /* Assets.xcassets */,
 				97768A5429EE966F006B883B /* LaunchScreen.storyboard */,
 				97768A5729EE966F006B883B /* Info.plist */,
-				97768A6B29FC2179006B883B /* RocketViewModel.swift */,
 				97768A6D29FC21F3006B883B /* RocketModel.swift */,
 				97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */,
 				97768A752A03D3AE006B883B /* RocketAttributesModel.swift */,
@@ -127,6 +132,7 @@
 			name = SpaceXfalconApp;
 			packageProductDependencies = (
 				97768A5E29EF021F006B883B /* SnapKit */,
+				97A7D6AE2A13AD4300C9E904 /* Alamofire */,
 			);
 			productName = SpaceXfalconApp;
 			productReference = 97768A4629EE966E006B883B /* SpaceXfalconApp.app */;
@@ -158,6 +164,7 @@
 			mainGroup = 97768A3D29EE966E006B883B;
 			packageReferences = (
 				97768A5D29EF021F006B883B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				97A7D6AD2A13AD4300C9E904 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 97768A4729EE966E006B883B /* Products */;
 			projectDirPath = "";
@@ -190,9 +197,10 @@
 				97768A4E29EE966E006B883B /* RocketViewController.swift in Sources */,
 				97768A6129EF0347006B883B /* RocketView.swift in Sources */,
 				97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */,
+				97A7D6AC2A13AC7E00C9E904 /* SpaceXService.swift in Sources */,
+				97A7D6B12A13AF5300C9E904 /* RocketViewModel.swift in Sources */,
 				97768A6329F17340006B883B /* UIColor+hex.swift in Sources */,
 				97768A4A29EE966E006B883B /* AppDelegate.swift in Sources */,
-				97768A6C29FC2179006B883B /* RocketViewModel.swift in Sources */,
 				97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */,
 				97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */,
 				97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */,
@@ -420,6 +428,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		97A7D6AD2A13AD4300C9E904 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +443,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 97768A5D29EF021F006B883B /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		97A7D6AE2A13AD4300C9E904 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97A7D6AD2A13AD4300C9E904 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

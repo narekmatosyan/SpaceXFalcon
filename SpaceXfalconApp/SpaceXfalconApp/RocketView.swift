@@ -16,13 +16,6 @@ protocol RocketViewDelegate {
 class RocketView: UIView {
     var delegate: RocketViewDelegate?
     
-    let firstSectionTitles = ["Первый запуск", "Страна", "Стоимость запуска", ""]
-    let secondSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания", ""]
-    let thirdSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания"]
-    let firstSectionValues = ["7 февраля,2018", "США", "$90 млн", ""]
-    let secondSectionValues = ["27", "308,6", "593", ""]
-    let thirdSectionValues = ["1", "243,2","397"]
-    
     let rocketImageView = UIImageView()
     let settingsButton = UIButton()
     let launchHistoryButton = UIButton()
@@ -44,7 +37,6 @@ class RocketView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func setupRocketImageView() {
         addSubview(rocketImageView)
@@ -103,7 +95,6 @@ class RocketView: UIView {
         blackView.addSubview(tableView)
         
         tableView.register(RocketAttributeItemCell.self, forCellReuseIdentifier: RocketAttributeItemCell.rocketCellIdentifier)
-        tableView.dataSource = self
         tableView.sectionHeaderHeight = 50
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
@@ -131,48 +122,5 @@ class RocketView: UIView {
             maker.top.equalTo(tableView.snp.bottom).offset(16)
             maker.bottom.equalToSuperview().inset(40)
         }
-    }
-}
-
-extension RocketView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 4
-        } else if section == 1 {
-            return 5
-        } else {
-            return 4
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RocketAttributeItemCell.rocketCellIdentifier, for: indexPath) as! RocketAttributeItemCell
-        cell.selectionStyle = .none
-        if indexPath.section == 0 {
-            cell.update(cellType: .item,
-                        title: firstSectionTitles[indexPath.row],
-                        value: firstSectionValues[indexPath.row])
-        } else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                cell.update(cellType: .header, title: "ПЕРВАЯ СТУПЕНЬ")
-            } else {
-                cell.update(cellType: .item,
-                            title: secondSectionTitles[indexPath.row - 1],
-                            value: secondSectionValues[indexPath.row - 1])
-            }
-        } else if indexPath.section == 2 {
-            if indexPath.row == 0 {
-                cell.update(cellType: .header, title: "ВТОРАЯ СТУПЕНЬ")
-            } else {
-                cell.update(cellType: .item,
-                            title: secondSectionTitles[indexPath.row - 1],
-                            value: thirdSectionValues[indexPath.row - 1])
-            }
-        }
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
     }
 }
