@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class RocketViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class RocketViewController: UIViewController {
         setupRocketView()
         
         fetchRockets()
+        
     }
     
     func setupRocketView() {
@@ -50,7 +52,6 @@ class RocketViewController: UIViewController {
 }
 
 extension RocketViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 4
@@ -63,18 +64,18 @@ extension RocketViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RocketAttributeItemCell.rocketCellIdentifier, for: indexPath) as! RocketAttributeItemCell
-        cell.selectionStyle = .none
+              
         if indexPath.section == 0 {
             cell.update(cellType: .item,
                         title: firstSectionTitles[indexPath.row],
-                        value: getFirstSectionValue(for: indexPath.row))
+                        value: getSectionValue(for: indexPath))
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 cell.update(cellType: .header, title: "ПЕРВАЯ СТУПЕНЬ")
             } else {
                 cell.update(cellType: .item,
                             title: secondSectionTitles[indexPath.row - 1],
-                            value: getSecondSectionValue(for: indexPath.row))
+                            value: getSectionValue(for: indexPath))
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
@@ -82,49 +83,50 @@ extension RocketViewController: UITableViewDataSource {
             } else {
                 cell.update(cellType: .item,
                             title: secondSectionTitles[indexPath.row - 1],
-                            value: getThirdSectionValue(for: indexPath.row))
+                            value: getSectionValue(for: indexPath))
             }
         }
         return cell
     }
     
-    func getFirstSectionValue(for row: Int) -> String {
-        let rocket = rocketViewModel.getRocket(at: 0)
-        switch row {
+    func getSectionValue(for indexPath: IndexPath) -> String {
+        switch indexPath.section {
         case 0:
-            return rocket?.rocketFirstFlight ?? ""
+            let rocket = rocketViewModel.getRocketSafety(at: 0)
+            switch indexPath.row {
+            case 0:
+                return rocket?.rocketFirstFlight.formatFirstFlightDate() ?? ""
+            case 1:
+                return rocket?.rocketLaunchCountry ?? ""
+            case 2:
+                return String(rocket?.costPerLaunch ?? 0)
+            default:
+                return ""
+            }
         case 1:
-            return rocket?.rocketLaunchCountry ?? ""
+            let rocket = rocketViewModel.getRocketSafety(at: 0)
+            switch indexPath.row {
+            case 1:
+                return String(rocket?.firstStage.rocketEngines ?? 0)
+            case 2:
+                return String(rocket?.firstStage.rocketFuelAmount ?? 0)
+            case 3:
+                return String(rocket?.firstStage.rocketBurnTime ?? 0)
+            default:
+                return ""
+            }
         case 2:
-            return String(rocket?.costPerLaunch ?? 0)
-        default:
-            return ""
-        }
-    }
-    
-    func getSecondSectionValue(for row: Int) -> String {
-        let rocket = rocketViewModel.getRocket(at: 0)
-        switch row {
-        case 1:
-            return String(rocket?.firstStage.rocketEngines ?? 0)
-        case 2:
-            return String(rocket?.firstStage.rocketFuelAmount ?? 0)
-        case 3:
-            return String(rocket?.firstStage.rocketBurnTime ?? 0)
-        default:
-            return ""
-        }
-    }
-    
-    func getThirdSectionValue(for row: Int) -> String {
-        let rocket = rocketViewModel.getRocket(at: 0)
-        switch row {
-        case 1:
-            return String(rocket?.secondStage.rocketEngines ?? 0)
-        case 2:
-            return String(rocket?.secondStage.rocketFuelAmount ?? 0)
-        case 3:
-            return String(rocket?.secondStage.rocketBurnTime ?? 0)
+            let rocket = rocketViewModel.getRocketSafety(at: 0)
+            switch indexPath.row {
+            case 1:
+                return String(rocket?.secondStage.rocketEngines ?? 0)
+            case 2:
+                return String(rocket?.secondStage.rocketFuelAmount ?? 0)
+            case 3:
+                return String(rocket?.secondStage.rocketBurnTime ?? 0)
+            default:
+                return ""
+            }
         default:
             return ""
         }

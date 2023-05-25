@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 protocol RocketViewDelegate {
     func didTapHistoryButton()
@@ -16,7 +17,6 @@ protocol RocketViewDelegate {
 class RocketView: UIView {
     var delegate: RocketViewDelegate?
     
-    let rocketImageView = UIImageView()
     let settingsButton = UIButton()
     let launchHistoryButton = UIButton()
     let rocketNameLabel = UILabel()
@@ -39,15 +39,14 @@ class RocketView: UIView {
     }
     
     func setupRocketImageView() {
+        let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+        blackView.addSubview(rocketImageView)
+        let url = URL(string: "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg")
+        rocketImageView.kf.setImage(with: url)
         addSubview(rocketImageView)
         
-        rocketImageView.image = UIImage(named: "BackgroundPic")
-        rocketImageView.layer.cornerRadius = 10
-        
-        rocketImageView.snp.makeConstraints { maker in
-            maker.width.equalTo(400)
-            maker.height.equalTo(627)
-        }
+        let overlayView = UIView(frame: CGRect(x: 0, y: 0, width: blackView.frame.width, height: blackView.frame.height))
+        rocketImageView.addSubview(overlayView)
     }
     
     func setupBlackView() {
@@ -98,7 +97,6 @@ class RocketView: UIView {
         tableView.sectionHeaderHeight = 50
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
-        
         tableView.snp.makeConstraints { maker in
             maker.width.equalTo(bounds.width - 32 * 2)
             maker.leading.equalToSuperview().offset(32)

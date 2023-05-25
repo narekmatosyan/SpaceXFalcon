@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 class RocketViewModel {
-    
     private let spaceXService = SpaceXService()
     var rockets: [RocketModel] = []
     
@@ -25,11 +24,7 @@ class RocketViewModel {
         }
     }
     
-    func getRocketCount() -> Int {
-        return rockets.count
-    }
-    
-    func getRocket(at index: Int) -> RocketModel? {
+    func getRocketSafety(at index: Int) -> RocketModel? {
         guard index >= 0 && index < rockets.count else {
             return nil
         }

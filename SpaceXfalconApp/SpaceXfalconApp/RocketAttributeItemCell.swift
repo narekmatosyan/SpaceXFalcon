@@ -24,6 +24,8 @@ class RocketAttributeItemCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(valueLabel)
         
+        selectionStyle = .none
+        
         setupTitleLabel()
         setupValueLabel()
     }
@@ -61,6 +63,7 @@ class RocketAttributeItemCell: UITableViewCell {
         titleLabel.text = title
         valueLabel.text = value
     }
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
