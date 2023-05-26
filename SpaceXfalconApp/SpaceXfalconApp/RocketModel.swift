@@ -6,6 +6,34 @@
 //
 
 import Foundation
+import Alamofire
 
-struct RocketModel {
+struct RocketModel: Codable {
+    let rocketName: String
+    let costPerLaunch: Int
+    let firstStage: RocketStage
+    let secondStage: RocketStage
+    let rocketFirstFlight: String
+    let rocketLaunchCountry: String
+    
+    enum CodingKeys: String, CodingKey {
+        case rocketName = "name"
+        case costPerLaunch = "cost_per_launch"
+        case rocketFirstFlight = "first_flight"
+        case rocketLaunchCountry = "country"
+        case firstStage = "first_stage"
+        case secondStage = "second_stage"
+    }
+}
+
+struct RocketStage : Codable {
+    let rocketEngines: Int
+    let rocketFuelAmount: Double
+    let rocketBurnTime: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case rocketEngines = "engines"
+        case rocketFuelAmount = "fuel_amount_tons"
+        case rocketBurnTime = "burn_time_sec"
+    }
 }

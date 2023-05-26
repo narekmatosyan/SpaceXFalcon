@@ -1,5 +1,5 @@
 //
-//  CustomView.swift
+//  RocketView.swift
 //  SpaceXfalconApp
 //
 //  Created by Narek Matosyan on 18.04.23.
@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 protocol RocketViewDelegate {
     func didTapHistoryButton()
@@ -16,14 +17,6 @@ protocol RocketViewDelegate {
 class RocketView: UIView {
     var delegate: RocketViewDelegate?
     
-    let firstSectionTitles = ["Первый запуск", "Страна", "Стоимость запуска", ""]
-    let secondSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания", ""]
-    let thirdSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания"]
-    let firstSectionValues = ["7 февраля,2018", "США", "$90 млн", ""]
-    let secondSectionValues = ["27", "308,6", "593", ""]
-    let thirdSectionValues = ["1", "243,2","397"]
-    
-    let rocketImageView = UIImageView()
     let settingsButton = UIButton()
     let launchHistoryButton = UIButton()
     let rocketNameLabel = UILabel()
@@ -45,17 +38,15 @@ class RocketView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func setupRocketImageView() {
+        let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+        blackView.addSubview(rocketImageView)
+        let url = URL(string: "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg")
+        rocketImageView.kf.setImage(with: url)
         addSubview(rocketImageView)
         
-        rocketImageView.image = UIImage(named: "BackgroundPic")
-        rocketImageView.layer.cornerRadius = 10
-        
-        rocketImageView.snp.makeConstraints { maker in
-            maker.width.equalTo(400)
-            maker.height.equalTo(627)
-        }
+        let overlayView = UIView(frame: CGRect(x: 0, y: 0, width: blackView.frame.width, height: blackView.frame.height))
+        rocketImageView.addSubview(overlayView)
     }
     
     func setupBlackView() {
@@ -103,11 +94,9 @@ class RocketView: UIView {
         blackView.addSubview(tableView)
         
         tableView.register(RocketAttributeItemCell.self, forCellReuseIdentifier: RocketAttributeItemCell.rocketCellIdentifier)
-        tableView.dataSource = self
         tableView.sectionHeaderHeight = 50
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
-        
         tableView.snp.makeConstraints { maker in
             maker.width.equalTo(bounds.width - 32 * 2)
             maker.leading.equalToSuperview().offset(32)
@@ -131,48 +120,5 @@ class RocketView: UIView {
             maker.top.equalTo(tableView.snp.bottom).offset(16)
             maker.bottom.equalToSuperview().inset(40)
         }
-    }
-}
-
-extension RocketView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 4
-        } else if section == 1 {
-            return 5
-        } else {
-            return 4
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RocketAttributeItemCell.rocketCellIdentifier, for: indexPath) as! RocketAttributeItemCell
-        cell.selectionStyle = .none
-        if indexPath.section == 0 {
-            cell.update(cellType: .item,
-                        title: firstSectionTitles[indexPath.row],
-                        value: firstSectionValues[indexPath.row])
-        } else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                cell.update(cellType: .header, title: "ПЕРВАЯ СТУПЕНЬ")
-            } else {
-                cell.update(cellType: .item,
-                            title: secondSectionTitles[indexPath.row - 1],
-                            value: secondSectionValues[indexPath.row - 1])
-            }
-        } else if indexPath.section == 2 {
-            if indexPath.row == 0 {
-                cell.update(cellType: .header, title: "ВТОРАЯ СТУПЕНЬ")
-            } else {
-                cell.update(cellType: .item,
-                            title: secondSectionTitles[indexPath.row - 1],
-                            value: thirdSectionValues[indexPath.row - 1])
-            }
-        }
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
     }
 }
