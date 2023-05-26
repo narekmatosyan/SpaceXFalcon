@@ -1,5 +1,5 @@
 //
-//  RocketFirstFlightDateFormatter.swift
+//  String+RocketFirstFlightDateFormatter.swift
 //  SpaceXfalconApp
 //
 //  Created by Narek Matosyan on 25.05.23.
