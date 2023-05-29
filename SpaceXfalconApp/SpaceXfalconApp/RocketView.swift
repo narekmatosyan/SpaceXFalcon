@@ -22,6 +22,7 @@ class RocketView: UIView {
     let rocketNameLabel = UILabel()
     let tableView = UITableView()
     let blackView = UIView()
+    let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
     
     init() {
         super.init(frame: .zero)
@@ -39,10 +40,7 @@ class RocketView: UIView {
     }
     
     func setupRocketImageView() {
-        let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
         blackView.addSubview(rocketImageView)
-        let url = URL(string: "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg")
-        rocketImageView.kf.setImage(with: url)
         addSubview(rocketImageView)
         
         let overlayView = UIView(frame: CGRect(x: 0, y: 0, width: blackView.frame.width, height: blackView.frame.height))
@@ -120,5 +118,10 @@ class RocketView: UIView {
             maker.top.equalTo(tableView.snp.bottom).offset(16)
             maker.bottom.equalToSuperview().inset(40)
         }
+    }
+    
+    func updateRocketImageView(urlString: String) {
+        let url = URL(string: urlString)
+        rocketImageView.kf.setImage(with: url)
     }
 }
