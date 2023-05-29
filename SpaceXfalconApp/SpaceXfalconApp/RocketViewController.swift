@@ -10,7 +10,6 @@ import SnapKit
 import Kingfisher
 
 class RocketViewController: UIViewController {
-    
     let firstSectionTitles = ["Первый запуск", "Страна", "Стоимость запуска", ""]
     let secondSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания", ""]
     let thirdSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания"]
@@ -26,7 +25,6 @@ class RocketViewController: UIViewController {
         setupRocketView()
         
         fetchRockets()
-        
     }
     
     func setupRocketView() {
@@ -41,7 +39,7 @@ class RocketViewController: UIViewController {
         rocketViewModel.fetchRockets { [weak self] result in
             switch result {
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.rocketView.updateRocketImageView(urlString: self.rocketViewModel.rockets[0].flickrImages[0])
                     self.rocketView.tableView.reloadData()
