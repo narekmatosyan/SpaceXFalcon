@@ -42,7 +42,9 @@ class RocketViewController: UIViewController {
             switch result {
             case .success:
                 DispatchQueue.main.async {
-                    self?.rocketView.tableView.reloadData()
+                    guard let self = self else { return }
+                    self.rocketView.updateRocketImageView(urlString: self.rocketViewModel.rockets[0].flickrImages[0])
+                    self.rocketView.tableView.reloadData()
                 }
             case .failure(let error):
                 print("Failed to fetch rockets: \(error)")

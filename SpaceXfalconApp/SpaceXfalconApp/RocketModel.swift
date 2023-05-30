@@ -13,6 +13,7 @@ struct RocketModel: Codable {
     let costPerLaunch: Int
     let firstStage: RocketStage
     let secondStage: RocketStage
+    let flickrImages: [String]
     let rocketFirstFlight: String
     let rocketLaunchCountry: String
     
@@ -23,6 +24,7 @@ struct RocketModel: Codable {
         case rocketLaunchCountry = "country"
         case firstStage = "first_stage"
         case secondStage = "second_stage"
+        case flickrImages = "flickr_images"
     }
 }
 
