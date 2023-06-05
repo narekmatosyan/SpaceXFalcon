@@ -18,7 +18,6 @@
 		97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6929FBE2EF006B883B /* UIColor+Styling.swift */; };
 		97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A6D29FC21F3006B883B /* RocketModel.swift */; };
 		97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */; };
-		97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768A752A03D3AE006B883B /* RocketAttributesModel.swift */; };
 		97A7B1042A12A9F0007EF824 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */; };
 		97A7B1062A12AA10007EF824 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */; };
 		97A7D6AC2A13AC7E00C9E904 /* SpaceXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D6AB2A13AC7E00C9E904 /* SpaceXService.swift */; };
@@ -26,6 +25,10 @@
 		97A7D6B12A13AF5300C9E904 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */; };
 		97A7D6B62A1CF22D00C9E904 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97A7D6B52A1CF22D00C9E904 /* Kingfisher */; };
 		97A7D6B82A1F7A7C00C9E904 /* String+RocketFirstFlightDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D6B72A1F7A7C00C9E904 /* String+RocketFirstFlightDateFormatter.swift */; };
+		97E672952A25EEEB00BEEAE5 /* RocketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E672942A25EEEB00BEEAE5 /* RocketListView.swift */; };
+		97E672972A25F11500BEEAE5 /* RocketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E672962A25F11500BEEAE5 /* RocketListViewController.swift */; };
+		97E6729C2A25F1F200BEEAE5 /* RocketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6729B2A25F1F200BEEAE5 /* RocketListViewModel.swift */; };
+		97E6729E2A29F6CC00BEEAE5 /* RocketListAttributesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6729D2A29F6CC00BEEAE5 /* RocketListAttributesItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,12 +44,15 @@
 		97768A6929FBE2EF006B883B /* UIColor+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styling.swift"; sourceTree = "<group>"; };
 		97768A6D29FC21F3006B883B /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributeItemCell.swift; sourceTree = "<group>"; };
-		97768A752A03D3AE006B883B /* RocketAttributesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAttributesModel.swift; sourceTree = "<group>"; };
 		97A7B1032A12A9F0007EF824 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		97A7B1052A12AA10007EF824 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 		97A7D6AB2A13AC7E00C9E904 /* SpaceXService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXService.swift; sourceTree = "<group>"; };
-		97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RocketViewModel.swift; path = ../RocketViewModel.swift; sourceTree = "<group>"; };
+		97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		97A7D6B72A1F7A7C00C9E904 /* String+RocketFirstFlightDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RocketFirstFlightDateFormatter.swift"; sourceTree = "<group>"; };
+		97E672942A25EEEB00BEEAE5 /* RocketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListView.swift; sourceTree = "<group>"; };
+		97E672962A25F11500BEEAE5 /* RocketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListViewController.swift; sourceTree = "<group>"; };
+		97E6729B2A25F1F200BEEAE5 /* RocketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListViewModel.swift; sourceTree = "<group>"; };
+		97E6729D2A29F6CC00BEEAE5 /* RocketListAttributesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListAttributesItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,20 +88,15 @@
 		97768A4829EE966E006B883B /* SpaceXfalconApp */ = {
 			isa = PBXGroup;
 			children = (
+				97E6729F2A2A3EAF00BEEAE5 /* Modules */,
 				97A7D6B92A1F987700C9E904 /* Extentions */,
 				97A7B1022A12A9D1007EF824 /* Resources */,
 				97768A4929EE966E006B883B /* AppDelegate.swift */,
 				97768A4B29EE966E006B883B /* SceneDelegate.swift */,
 				97A7D6AB2A13AC7E00C9E904 /* SpaceXService.swift */,
-				97768A4D29EE966E006B883B /* RocketViewController.swift */,
-				97768A6029EF0347006B883B /* RocketView.swift */,
-				97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */,
 				97768A5229EE966F006B883B /* Assets.xcassets */,
 				97768A5429EE966F006B883B /* LaunchScreen.storyboard */,
 				97768A5729EE966F006B883B /* Info.plist */,
-				97768A6D29FC21F3006B883B /* RocketModel.swift */,
-				97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */,
-				97768A752A03D3AE006B883B /* RocketAttributesModel.swift */,
 			);
 			path = SpaceXfalconApp;
 			sourceTree = "<group>";
@@ -125,6 +126,46 @@
 				97A7D6B72A1F7A7C00C9E904 /* String+RocketFirstFlightDateFormatter.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		97E672982A25F11A00BEEAE5 /* RocketList */ = {
+			isa = PBXGroup;
+			children = (
+				97E672962A25F11500BEEAE5 /* RocketListViewController.swift */,
+				97E672942A25EEEB00BEEAE5 /* RocketListView.swift */,
+				97E6729B2A25F1F200BEEAE5 /* RocketListViewModel.swift */,
+				97E6729D2A29F6CC00BEEAE5 /* RocketListAttributesItemCell.swift */,
+			);
+			path = RocketList;
+			sourceTree = "<group>";
+		};
+		97E6729F2A2A3EAF00BEEAE5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				97E672A12A2A3F7700BEEAE5 /* Models */,
+				97E672A02A2A3EC500BEEAE5 /* Rocket */,
+				97E672982A25F11A00BEEAE5 /* RocketList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		97E672A02A2A3EC500BEEAE5 /* Rocket */ = {
+			isa = PBXGroup;
+			children = (
+				97768A4D29EE966E006B883B /* RocketViewController.swift */,
+				97768A6029EF0347006B883B /* RocketView.swift */,
+				97A7D6B02A13AF5300C9E904 /* RocketViewModel.swift */,
+				97768A712A0145A7006B883B /* RocketAttributeItemCell.swift */,
+			);
+			path = Rocket;
+			sourceTree = "<group>";
+		};
+		97E672A12A2A3F7700BEEAE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97768A6D29FC21F3006B883B /* RocketModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,14 +251,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				97768A4E29EE966E006B883B /* RocketViewController.swift in Sources */,
+				97E6729E2A29F6CC00BEEAE5 /* RocketListAttributesItemCell.swift in Sources */,
 				97768A6129EF0347006B883B /* RocketView.swift in Sources */,
-				97768A762A03D3AE006B883B /* RocketAttributesModel.swift in Sources */,
 				97A7D6AC2A13AC7E00C9E904 /* SpaceXService.swift in Sources */,
+				97E6729C2A25F1F200BEEAE5 /* RocketListViewModel.swift in Sources */,
+				97E672952A25EEEB00BEEAE5 /* RocketListView.swift in Sources */,
 				97A7D6B12A13AF5300C9E904 /* RocketViewModel.swift in Sources */,
 				97768A6329F17340006B883B /* UIColor+hex.swift in Sources */,
 				97768A4A29EE966E006B883B /* AppDelegate.swift in Sources */,
 				97A7D6B82A1F7A7C00C9E904 /* String+RocketFirstFlightDateFormatter.swift in Sources */,
 				97768A6E29FC21F4006B883B /* RocketModel.swift in Sources */,
+				97E672972A25F11500BEEAE5 /* RocketListViewController.swift in Sources */,
 				97768A722A0145A7006B883B /* RocketAttributeItemCell.swift in Sources */,
 				97768A6A29FBE2EF006B883B /* UIColor+Styling.swift in Sources */,
 				97768A4C29EE966E006B883B /* SceneDelegate.swift in Sources */,

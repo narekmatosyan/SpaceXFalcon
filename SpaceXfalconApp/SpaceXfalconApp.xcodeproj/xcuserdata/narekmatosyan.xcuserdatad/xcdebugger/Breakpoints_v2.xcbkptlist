@@ -71,15 +71,111 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1DA92F6B-A3B8-47DF-BD3B-8DF98427BCAD"
+            uuid = "2BE05090-BBC3-417E-8E26-8DB0720D2573"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SpaceXfalconApp/RocketViewController.swift"
+            filePath = "RocketList/RocketListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "826DD6FB-1596-4271-9856-D81CC138C011"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RocketList/RocketListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchRockets()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "826DD6FB-1596-4271-9856-D81CC138C011 - a6b4533abf334434"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in SpaceXfalconApp.RocketListViewController.fetchRockets() -&gt; ()"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "826DD6FB-1596-4271-9856-D81CC138C011 - a6b4533abf334434"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in SpaceXfalconApp.RocketListViewController.fetchRockets() -&gt; ()"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3390458E-CE54-40DC-AEFB-CE2CF3A96620"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RocketList/RocketListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFD61DC2-33DE-47AF-998A-655EEE0E37D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RocketList/RocketListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56E70840-6419-4B59-AA16-B8B8012A7C42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RocketList/RocketListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,17 +183,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "987AC5E4-9A1A-47A0-8335-B61F354E3148"
+            uuid = "7C1AC10D-4AE5-445A-AB77-973F4F3FF10D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SpaceXfalconApp/RocketViewController.swift"
+            filePath = "SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "RocketViewController"
-            landmarkType = "21">
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "didSelectRocket(atIndex:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C1AC10D-4AE5-445A-AB77-973F4F3FF10D - d5f15eb45806a89b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXfalconApp.RocketListViewController.tableView(_: __C.UITableView, heightForRowAt: Foundation.IndexPath) -&gt; CoreGraphics.CGFloat"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "7C1AC10D-4AE5-445A-AB77-973F4F3FF10D - 89a860dae6c40a74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXfalconApp.RocketListViewController.didSelectRocket(atIndex: Swift.Int) -&gt; ()"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "7C1AC10D-4AE5-445A-AB77-973F4F3FF10D - 89a860dae6c40a74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXfalconApp.RocketListViewController.didSelectRocket(atIndex: Swift.Int) -&gt; ()"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44988809-715F-4B53-8F14-669585F95DD1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "didSelectRocket(atIndex:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "44988809-715F-4B53-8F14-669585F95DD1 - 89a860dae6c409e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXfalconApp.RocketListViewController.didSelectRocket(atIndex: Swift.Int) -&gt; ()"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "44988809-715F-4B53-8F14-669585F95DD1 - 89a860dae6c409e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXfalconApp.RocketListViewController.didSelectRocket(atIndex: Swift.Int) -&gt; ()"
+                  moduleName = "SpaceXfalconApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/narekmatosyan/Desktop/SpaceXFalcon/SpaceXfalconApp/SpaceXfalconApp/Modules/RocketList/RocketListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AF5DBCA-33FD-4221-AE50-983BB583265D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceXfalconApp/Modules/Rocket/RocketViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83E88A43-26BB-4FAF-9E81-3169BFFB4CB1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceXfalconApp/Modules/Rocket/RocketView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "updateShadowVisibility(withContentOffsetY:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

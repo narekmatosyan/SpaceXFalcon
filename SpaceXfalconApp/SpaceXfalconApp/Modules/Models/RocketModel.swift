@@ -16,7 +16,7 @@ struct RocketModel: Codable {
     let flickrImages: [String]
     let rocketFirstFlight: String
     let rocketLaunchCountry: String
-    
+        
     enum CodingKeys: String, CodingKey {
         case rocketName = "name"
         case costPerLaunch = "cost_per_launch"
