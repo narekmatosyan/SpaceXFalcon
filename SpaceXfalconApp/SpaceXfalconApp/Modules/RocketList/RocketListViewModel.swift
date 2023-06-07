@@ -1,14 +1,14 @@
 //
-//  RocketViewModel.swift
+//  RocketListViewModel.swift
 //  SpaceXfalconApp
 //
-//  Created by Narek Matosyan on 16.05.23.
+//  Created by Narek Matosyan on 30.05.23.
 //
 
 import Foundation
 import Alamofire
 
-class RocketViewModel {
+class RocketListViewModel {
     private let spaceXService = SpaceXService()
     var rockets: [RocketModel] = []
     

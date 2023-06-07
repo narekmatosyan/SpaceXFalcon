@@ -23,6 +23,7 @@ class RocketView: UIView {
     let tableView = UITableView()
     let blackView = UIView()
     let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+    let shadowView = UIView()
     
     init() {
         super.init(frame: .zero)
@@ -33,6 +34,7 @@ class RocketView: UIView {
         setupSettingsButton()
         setupTableView()
         setupLaunchHistoryButton()
+        setupShadowView()
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +68,6 @@ class RocketView: UIView {
         blackView.addSubview(rocketNameLabel)
         
         rocketNameLabel.textAlignment = .center
-        rocketNameLabel.text = "Falcon Heavy"
         rocketNameLabel.textColor = .white
         rocketNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
         
@@ -84,7 +85,7 @@ class RocketView: UIView {
         settingsButton.snp.makeConstraints { maker in
             maker.width.height.equalTo(32)
             maker.trailing.equalToSuperview().inset(32)
-            maker.top.equalToSuperview().offset(48)
+            maker.top.equalToSuperview().offset(44)
         }
     }
     
@@ -99,7 +100,7 @@ class RocketView: UIView {
             maker.width.equalTo(bounds.width - 32 * 2)
             maker.leading.equalToSuperview().offset(32)
             maker.trailing.equalToSuperview().inset(32)
-            maker.top.equalTo(rocketNameLabel.snp.bottom).offset(40)
+            maker.top.equalTo(rocketNameLabel.snp.bottom).offset(32)
         }
     }
     
@@ -120,8 +121,25 @@ class RocketView: UIView {
         }
     }
     
-    func updateRocketImageView(urlString: String) {
-        let url = URL(string: urlString)
+    func setupShadowView() {
+        blackView.addSubview(shadowView)
+        
+        shadowView.backgroundColor = .black.withAlphaComponent(0.5)
+        shadowView.snp.makeConstraints { maker in
+            maker.height.equalTo(15)
+            maker.trailing.leading.equalToSuperview()
+            maker.bottom.equalToSuperview().inset(143)
+        }
+    }
+    
+    func update(withRocket rocket: RocketModel) {
+        let imageUrl = rocket.flickrImages.first ?? ""
+        let url = URL(string: imageUrl)
         rocketImageView.kf.setImage(with: url)
+        rocketNameLabel.text = rocket.rocketName
+    }
+    
+    func updateShadowVisibility(withContentOffsetY contentOffsetY: CGFloat) {
+        shadowView.isHidden = contentOffsetY >= tableView.contentSize.height
     }
 }
