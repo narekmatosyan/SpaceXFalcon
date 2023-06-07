@@ -16,10 +16,6 @@ class RocketViewModel {
         self.rocket = rocket
     }
     
-    func viewDidLoad() {
-        
-    }
-    
     func getSectionValue(for indexPath: IndexPath) -> String {
         switch indexPath.section {
         case 0:

@@ -16,6 +16,7 @@ class RocketListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Rockets"
         rocketListView.tableView.dataSource = self
         rocketListView.tableView.delegate = self
@@ -29,7 +30,7 @@ class RocketListViewController: UIViewController {
         rocketListViewModel.fetchRockets { [weak self] result in
             switch result {
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.rocketListView.tableView.reloadData()
                 }
