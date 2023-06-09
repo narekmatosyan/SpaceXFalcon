@@ -10,16 +10,15 @@ import SnapKit
 import Kingfisher
 
 class RocketViewController: UIViewController {
-    
     let firstSectionTitles = ["Первый запуск", "Страна", "Стоимость запуска", ""]
     let secondSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания", ""]
     let thirdSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания"]
     
     let rocketView = RocketView()
-    let rocketViewModel: RocketViewModel
+    let viewModel: RocketViewModel
     
     init(viewModel: RocketViewModel) {
-        self.rocketViewModel = viewModel
+        self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,10 +33,12 @@ class RocketViewController: UIViewController {
         view.backgroundColor = .black
         
         rocketView.delegate = self
-        rocketView.tableView.delegate = self
         rocketView.tableView.dataSource = self
+        rocketView.collectionView.dataSource = self
+        rocketView.collectionView.delegate = self
         setupRocketView()
-        rocketView.update(withRocket: rocketViewModel.rocket)
+        rocketView.update(withRocket: viewModel.rocket)
+        
     }
     
     func setupRocketView() {
@@ -66,14 +67,14 @@ extension RocketViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             cell.update(cellType: .item,
                         title: firstSectionTitles[indexPath.row],
-                        value: rocketViewModel.getSectionValue(for: indexPath))
+                        value: viewModel.getTableViewSectionValue(for: indexPath))
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 cell.update(cellType: .header, title: "ПЕРВАЯ СТУПЕНЬ")
             } else {
                 cell.update(cellType: .item,
                             title: secondSectionTitles[indexPath.row - 1],
-                            value: rocketViewModel.getSectionValue(for: indexPath))
+                            value: viewModel.getTableViewSectionValue(for: indexPath))
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
@@ -81,7 +82,7 @@ extension RocketViewController: UITableViewDataSource {
             } else {
                 cell.update(cellType: .item,
                             title: secondSectionTitles[indexPath.row - 1],
-                            value: rocketViewModel.getSectionValue(for: indexPath))
+                            value: viewModel.getTableViewSectionValue(for: indexPath))
             }
         }
         return cell
@@ -92,10 +93,41 @@ extension RocketViewController: UITableViewDataSource {
     }
 }
 
+extension RocketViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RocketParameterItemCell.rocketParameterIdentifier, for: indexPath) as! RocketParameterItemCell
+        var measureSystem: RocketViewModel.MeasureSystem = .feet
+        switch indexPath.item {
+        case 0:
+            measureSystem = .meter
+        case 1:
+            measureSystem = .meter
+        case 2:
+            measureSystem = .kg
+        case 3:
+            measureSystem = .kN
+        default:
+            break
+        }
+        let value = viewModel.getCollectionViewItemValue(for: indexPath, measureSystem: measureSystem)
+        cell.update(value: value, index: indexPath.item)
+        return cell
+    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 60.0
+//      }
+    }
 
-extension RocketViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        rocketView.updateShadowVisibility(withContentOffsetY: scrollView.contentOffset.y)
+extension RocketViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 96, height: 96)
     }
 }
 

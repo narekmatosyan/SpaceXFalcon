@@ -21,9 +21,17 @@ class RocketView: UIView {
     let launchHistoryButton = UIButton()
     let rocketNameLabel = UILabel()
     let tableView = UITableView()
+    
+    let collectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.register(RocketParameterItemCell.self, forCellWithReuseIdentifier: RocketParameterItemCell.rocketParameterIdentifier)
+        return collectionView
+    }()
+    
     let blackView = UIView()
     let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
-    let shadowView = UIView()
     
     init() {
         super.init(frame: .zero)
@@ -32,9 +40,9 @@ class RocketView: UIView {
         setupBlackView()
         setupRocketNameLabel()
         setupSettingsButton()
+        setupCollectionView()
         setupTableView()
         setupLaunchHistoryButton()
-        setupShadowView()
     }
     
     required init?(coder: NSCoder) {
@@ -89,6 +97,18 @@ class RocketView: UIView {
         }
     }
     
+    func setupCollectionView() {
+        blackView.addSubview(collectionView)
+        
+        collectionView.backgroundColor = .black
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.snp.makeConstraints { maker in
+            maker.height.equalTo(96)
+            maker.leading.trailing.equalTo(32)
+            maker.top.equalTo(rocketNameLabel.snp.bottom).offset(32)
+        }
+    }
+    
     func setupTableView() {
         blackView.addSubview(tableView)
         
@@ -100,7 +120,7 @@ class RocketView: UIView {
             maker.width.equalTo(bounds.width - 32 * 2)
             maker.leading.equalToSuperview().offset(32)
             maker.trailing.equalToSuperview().inset(32)
-            maker.top.equalTo(rocketNameLabel.snp.bottom).offset(32)
+            maker.top.equalTo(collectionView.snp.bottom).offset(40)
         }
     }
     
@@ -121,25 +141,10 @@ class RocketView: UIView {
         }
     }
     
-    func setupShadowView() {
-        blackView.addSubview(shadowView)
-        
-        shadowView.backgroundColor = .black.withAlphaComponent(0.5)
-        shadowView.snp.makeConstraints { maker in
-            maker.height.equalTo(15)
-            maker.trailing.leading.equalToSuperview()
-            maker.bottom.equalToSuperview().inset(143)
-        }
-    }
-    
     func update(withRocket rocket: RocketModel) {
         let imageUrl = rocket.flickrImages.first ?? ""
         let url = URL(string: imageUrl)
         rocketImageView.kf.setImage(with: url)
         rocketNameLabel.text = rocket.rocketName
-    }
-    
-    func updateShadowVisibility(withContentOffsetY contentOffsetY: CGFloat) {
-        shadowView.isHidden = contentOffsetY >= tableView.contentSize.height
     }
 }
