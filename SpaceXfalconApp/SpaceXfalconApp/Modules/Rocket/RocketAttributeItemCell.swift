@@ -64,7 +64,6 @@ class RocketAttributeItemCell: UITableViewCell {
         valueLabel.text = value
     }
     
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         

@@ -53,7 +53,7 @@ extension RocketListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RocketListAttributesItemCell.rocketListCellIdentifier, for: indexPath) as! RocketListAttributesItemCell
         
-        let rocket = rocketListViewModel.getRocketSafety(at: indexPath.row)
+        let rocket = rocketListViewModel.rocketSafety(at: indexPath.row)
         cell.textLabel?.text = rocket?.rocketName
         return cell
     }
@@ -79,7 +79,7 @@ extension RocketListViewController: UITableViewDelegate {
 
 extension RocketListViewController: RocketListViewDelegate {
     func didSelectRocket(atIndex index: Int) {
-        guard let rocket = rocketListViewModel.getRocketSafety(at: index) else { return }
+        guard let rocket = rocketListViewModel.rocketSafety(at: index) else { return }
         let rocketViewModel = RocketViewModel(rocket: rocket)
         let rocketViewController = RocketViewController(viewModel: rocketViewModel)
         self.navigationController?.pushViewController(rocketViewController, animated: true)

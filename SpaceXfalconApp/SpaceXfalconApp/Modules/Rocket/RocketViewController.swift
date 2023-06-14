@@ -38,7 +38,6 @@ class RocketViewController: UIViewController {
         rocketView.collectionView.delegate = self
         setupRocketView()
         rocketView.update(withRocket: viewModel.rocket)
-        
     }
     
     func setupRocketView() {
@@ -67,14 +66,14 @@ extension RocketViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             cell.update(cellType: .item,
                         title: firstSectionTitles[indexPath.row],
-                        value: viewModel.getTableViewSectionValue(for: indexPath))
+                        value: viewModel.tableViewSectionValue(for: indexPath))
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 cell.update(cellType: .header, title: "ПЕРВАЯ СТУПЕНЬ")
             } else {
                 cell.update(cellType: .item,
                             title: secondSectionTitles[indexPath.row - 1],
-                            value: viewModel.getTableViewSectionValue(for: indexPath))
+                            value: viewModel.tableViewSectionValue(for: indexPath))
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
@@ -82,7 +81,7 @@ extension RocketViewController: UITableViewDataSource {
             } else {
                 cell.update(cellType: .item,
                             title: secondSectionTitles[indexPath.row - 1],
-                            value: viewModel.getTableViewSectionValue(for: indexPath))
+                            value: viewModel.tableViewSectionValue(for: indexPath))
             }
         }
         return cell
@@ -94,7 +93,6 @@ extension RocketViewController: UITableViewDataSource {
 }
 
 extension RocketViewController: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         4
     }
@@ -114,16 +112,11 @@ extension RocketViewController: UICollectionViewDataSource {
         default:
             break
         }
-        let value = viewModel.getCollectionViewItemValue(for: indexPath, measureSystem: measureSystem)
+        let value = viewModel.collectionViewItemValue(for: indexPath, measureSystem: measureSystem)
         cell.update(value: value, index: indexPath.item)
         return cell
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//
-//        return 60.0
-//      }
-    }
+}
 
 extension RocketViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -132,9 +125,9 @@ extension RocketViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension RocketViewController: RocketViewDelegate {
+    
     func didTapHistoryButton() {
     }
-    
     func didTapSettingsButton() {
     }
 }

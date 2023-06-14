@@ -16,7 +16,7 @@ class RocketViewModel {
         self.rocket = rocket
     }
     
-    func getTableViewSectionValue(for indexPath: IndexPath) -> String {
+    func tableViewSectionValue(for indexPath: IndexPath) -> String {
         switch indexPath.section {
         case 0:
             switch indexPath.row {
@@ -56,7 +56,7 @@ class RocketViewModel {
         }
     }
     
-    func getCollectionViewItemValue(for indexPath: IndexPath, measureSystem: MeasureSystem) -> Double {
+    func collectionViewItemValue(for indexPath: IndexPath, measureSystem: MeasureSystem) -> Double {
         switch measureSystem {
         case .meter:
             switch indexPath.item {

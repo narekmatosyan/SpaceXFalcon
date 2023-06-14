@@ -35,7 +35,6 @@ class RocketParameterItemCell: UICollectionViewCell {
         
         setupValueLabel()
         setupTitleLabel()
-        
     }
     
     func setupValueLabel() {
