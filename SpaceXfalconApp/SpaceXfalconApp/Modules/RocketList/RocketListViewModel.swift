@@ -24,7 +24,7 @@ class RocketListViewModel {
         }
     }
     
-    func getRocketSafety(at index: Int) -> RocketModel? {
+    func rocketSafety(at index: Int) -> RocketModel? {
         guard index >= 0 && index < rockets.count else {
             return nil
         }

@@ -35,7 +35,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func setupTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.textColor = .lightGray
-        titleLabel.font = UIFont(name: "Lab Grotesque", size: 16)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: 16)
         titleLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.leading.equalToSuperview()
@@ -45,7 +45,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func setupValueLabel() {
         contentView.addSubview(valueLabel)
         valueLabel.textColor = .specWhite
-        valueLabel.font = UIFont(name: "Lab Grotesque", size: 16)
+        valueLabel.font = UIFont(name: "LabGrotesque-Regular", size: 16)
         valueLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.trailing.equalToSuperview()
@@ -64,10 +64,9 @@ class RocketAttributeItemCell: UITableViewCell {
         valueLabel.text = value
     }
     
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        titleLabel.font = UIFont(name: "Lab Grotesque", size: 16)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: 16)
     }
 }
