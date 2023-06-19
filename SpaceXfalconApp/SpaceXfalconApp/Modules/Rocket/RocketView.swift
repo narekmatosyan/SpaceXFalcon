@@ -10,7 +10,7 @@ import SnapKit
 import Kingfisher
 
 protocol RocketViewDelegate {
-    func didTapHistoryButton()
+    func didTapLaunchHistoryButton()
     func didTapSettingsButton()
 }
 
@@ -31,7 +31,7 @@ class RocketView: UIView {
     }()
     
     let blackView = UIView()
-    let rocketImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+    let rocketImageView = UIImageView()
     
     init() {
         super.init(frame: .zero)
@@ -50,11 +50,13 @@ class RocketView: UIView {
     }
     
     func setupRocketImageView() {
-        blackView.addSubview(rocketImageView)
         addSubview(rocketImageView)
         
-        let overlayView = UIView(frame: CGRect(x: 0, y: 0, width: blackView.frame.width, height: blackView.frame.height))
-        rocketImageView.addSubview(overlayView)
+        rocketImageView.snp.makeConstraints { maker in
+            maker.top.width.equalToSuperview()
+            maker.centerX.equalToSuperview()
+            maker.height.equalTo(400)
+        }
     }
     
     func setupBlackView() {
@@ -68,7 +70,7 @@ class RocketView: UIView {
             maker.width.equalToSuperview()
             maker.bottom.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
-            maker.top.equalToSuperview().offset(310)
+            maker.top.equalToSuperview().offset(200)
         }
     }
     
@@ -129,8 +131,9 @@ class RocketView: UIView {
         
         launchHistoryButton.layer.cornerRadius = 16
         launchHistoryButton.backgroundColor = .rocketGray
-        launchHistoryButton.setTitle( "Посмотреть запуски", for: .normal)
+        launchHistoryButton.setTitle( "История запусков всех ракет", for: .normal)
         launchHistoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        launchHistoryButton.addTarget(self, action: #selector(didLaunchHistoryButtonTapped), for: .touchUpInside)
         
         launchHistoryButton.snp.makeConstraints { maker in
             maker.height.equalTo(60)
@@ -146,5 +149,9 @@ class RocketView: UIView {
         let url = URL(string: imageUrl)
         rocketImageView.kf.setImage(with: url)
         rocketNameLabel.text = rocket.rocketName
+    }
+    
+    @objc func didLaunchHistoryButtonTapped(_ sender: UIButton) {
+        delegate?.didTapLaunchHistoryButton()
     }
 }

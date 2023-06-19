@@ -15,9 +15,9 @@ class RocketListAttributesItemCell: UITableViewCell {
         
         contentView.backgroundColor = .black
         contentView.layer.borderWidth = 4
-        contentView.layer.borderColor = UIColor.systemMint.cgColor
+        contentView.layer.borderColor = UIColor.rocketGray.cgColor
         textLabel?.font = UIFont.boldSystemFont(ofSize: 26)
-        textLabel?.textColor = .systemMint
+        textLabel?.textColor = .gray
         textLabel?.textAlignment = .center
     }
     

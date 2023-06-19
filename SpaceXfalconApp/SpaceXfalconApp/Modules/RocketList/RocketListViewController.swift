@@ -18,6 +18,7 @@ class RocketListViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Rockets"
+        
         rocketListView.tableView.dataSource = self
         rocketListView.tableView.delegate = self
         rocketListView.delegate = self

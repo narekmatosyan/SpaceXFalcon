@@ -1,25 +1,21 @@
 //
-//  RocketListView.swift
+//  LaunchHistoryView.swift
 //  SpaceXfalconApp
 //
-//  Created by Narek Matosyan on 30.05.23.
+//  Created by Narek Matosyan on 14.06.23.
 //
 
 import UIKit
 import SnapKit
-import Kingfisher
+import Foundation
 
-protocol RocketListViewDelegate {
-    func didSelectRocket(atIndex index: Int)
-}
-
-class RocketListView: UIView {
-    var delegate: RocketListViewDelegate?
-    
+class LaunchHistoryView: UIView {
     let tableView = UITableView()
     
     init() {
         super.init(frame: .zero)
+        
+        backgroundColor = .black
         
         setupTableView()
     }
@@ -31,14 +27,14 @@ class RocketListView: UIView {
     func setupTableView() {
         addSubview(tableView)
         
-        tableView.register(RocketListAttributesItemCell.self, forCellReuseIdentifier: RocketListAttributesItemCell.rocketListCellIdentifier)
+        tableView.register(LaunchHistoryAttributesItemCell.self, forCellReuseIdentifier: LaunchHistoryAttributesItemCell.launchHistoryCellIdentifier)
         tableView.sectionHeaderHeight = 50
-        tableView.layer.cornerRadius = 24
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
         tableView.snp.makeConstraints { maker in
-            maker.top.equalTo(safeAreaInsets.top)
-            maker.leading.trailing.bottom.equalToSuperview()
+            maker.top.bottom.equalToSuperview()
+            maker.leading.equalToSuperview().offset(32)
+            maker.trailing.equalToSuperview().inset(32)
         }
     }
 }
