@@ -32,6 +32,10 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
         setupContainerView()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func setupContainerView() {
         contentView.addSubview(containerView)
         
@@ -88,9 +92,6 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
             
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func update(withLaunch launch: LaunchModel) {

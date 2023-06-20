@@ -70,7 +70,6 @@ extension LaunchHistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LaunchHistoryAttributesItemCell.launchHistoryCellIdentifier, for: indexPath) as! LaunchHistoryAttributesItemCell
-        
         if let launch = launchHistoryViewModel.rocketLaunchSafety(at: indexPath.row) {
             cell.update(withLaunch: launch)
         }

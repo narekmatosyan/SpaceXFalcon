@@ -14,7 +14,6 @@ class LaunchHistoryViewModel {
     
     
     func fetchLaunches(completion: @escaping (Result<[LaunchModel],Error>) -> Void) {
-        _ = UIApplication.shared
         SpaceXService.shared.fetchLaunches { [weak self] result in
             switch result {
             case .success(let launches):

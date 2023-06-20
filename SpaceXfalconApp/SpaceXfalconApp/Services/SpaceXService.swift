@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 class SpaceXService {
-    
     static let shared = SpaceXService()
     
     private let rocketsApiString = "https://api.spacexdata.com/v4/rockets"
