@@ -43,9 +43,13 @@ class RocketViewController: UIViewController {
     func setupRocketView() {
         view.addSubview(rocketView)
         
-        rocketView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        rocketView.snp.makeConstraints { maker in
+            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            maker.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            maker.leading.trailing.equalToSuperview()
         }
+        
+        title = viewModel.rocket.rocketName
     }
 }
 
@@ -125,9 +129,13 @@ extension RocketViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension RocketViewController: RocketViewDelegate {
-    
-    func didTapHistoryButton() {
+    func didTapLaunchHistoryButton() {
+        let viewModel = LaunchHistoryViewModel()
+        let viewController = LaunchHistoryViewController(launchHistoryViewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
+    
     func didTapSettingsButton() {
+        
     }
 }

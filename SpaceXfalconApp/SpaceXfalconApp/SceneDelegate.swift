@@ -15,11 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
-        navigationController.navigationBar.tintColor = .black
         let viewController = RocketListViewController()
         navigationController.viewControllers = [viewController]
+        navigationController.navigationBar.tintColor = .white
+        setupNavigationBar()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    func setupNavigationBar() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+        navigationBarAppearance.backgroundColor = .black
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

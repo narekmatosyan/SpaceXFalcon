@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class RocketListViewModel {
-    private let spaceXService = SpaceXService()
+    private let spaceXService = SpaceXService.shared
     var rockets: [RocketModel] = []
     
     func fetchRockets(completion: @escaping (Result<Void, Error>) -> Void) {
