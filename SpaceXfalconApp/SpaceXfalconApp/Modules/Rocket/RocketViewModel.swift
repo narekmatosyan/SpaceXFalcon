@@ -10,10 +10,19 @@ import Alamofire
 import UIKit
 
 class RocketViewModel {
+    let settingsService = SettingsService.shared
     var rocket: RocketModel
     
     init(rocket: RocketModel) {
         self.rocket = rocket
+    }
+    
+    func saveMode(forSetting setting: Setting, mode: Mode) {
+        settingsService.saveMode(forSetting: setting, mode: mode)
+    }
+    
+    func getMode(forSetting setting: Setting) -> Mode? {
+        settingsService.getMode(forSetting: setting)
     }
     
     func tableViewSectionValue(for indexPath: IndexPath) -> String {
@@ -56,9 +65,9 @@ class RocketViewModel {
         }
     }
     
-    func collectionViewItemValue(for indexPath: IndexPath, measureSystem: MeasureSystem) -> Double {
-        switch measureSystem {
-        case .meter:
+    func collectionViewItemValue(for indexPath: IndexPath, mode: Mode) -> Double {
+        switch mode {
+        case .m:
             switch indexPath.item {
             case 0:
                 return rocket.height.meters
@@ -67,7 +76,7 @@ class RocketViewModel {
             default:
                 return 0
             }
-        case .feet:
+        case .ft:
             switch indexPath.item {
             case 0:
                 return rocket.height.feet
@@ -85,16 +94,5 @@ class RocketViewModel {
         case .lbf:
             return rocket.firstStage.rocketThrust?.kN ?? 0
         }
-    }
-}
-
-extension RocketViewModel {
-    enum MeasureSystem {
-        case meter
-        case feet
-        case kg
-        case lb
-        case kN
-        case lbf
     }
 }

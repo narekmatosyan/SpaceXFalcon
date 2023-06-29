@@ -35,7 +35,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func setupTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.textColor = .lightGray
-        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: 16)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: Constants.titleLabelFont)
         titleLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.leading.equalToSuperview()
@@ -45,7 +45,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func setupValueLabel() {
         contentView.addSubview(valueLabel)
         valueLabel.textColor = .specWhite
-        valueLabel.font = UIFont(name: "LabGrotesque-Regular", size: 16)
+        valueLabel.font = UIFont(name: "LabGrotesque-Regular", size: Constants.ValueLabel.valueLabelFont)
         valueLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.trailing.equalToSuperview()
@@ -55,7 +55,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func update(cellType: CellType, title: String, value: String? = nil) {
         switch cellType {
         case .header:
-            titleLabel.font = UIFont(name: "LabGrotesque-Bold", size: 16)
+            titleLabel.font = UIFont(name: "LabGrotesque-Bold", size: Constants.Update.titleLabelFont)
             titleLabel.textColor = .specWhite
         case .item:
             break
@@ -67,6 +67,22 @@ class RocketAttributeItemCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: 16)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: Constants.PrepareForReuse.titleLabelFont)
+    }
+}
+
+extension RocketAttributeItemCell {
+    enum Constants {
+        static let titleLabelFont: CGFloat = 16
+        
+        enum ValueLabel {
+            static let valueLabelFont: CGFloat = 16
+        }
+        enum Update {
+            static let titleLabelFont: CGFloat = 16
+        }
+        enum PrepareForReuse {
+            static let titleLabelFont: CGFloat = 16
+        }
     }
 }

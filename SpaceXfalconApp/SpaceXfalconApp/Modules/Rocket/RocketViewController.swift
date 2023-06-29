@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 import Kingfisher
 
+protocol RocketViewControllerDelegate {
+    func updateMode(forSetting: Setting)
+}
+
 class RocketViewController: UIViewController {
     let firstSectionTitles = ["Первый запуск", "Страна", "Стоимость запуска", ""]
     let secondSectionTitles = ["Количество двигателей", "Количество топлива", "Время сгорания", ""]
@@ -103,21 +107,26 @@ extension RocketViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RocketParameterItemCell.rocketParameterIdentifier, for: indexPath) as! RocketParameterItemCell
-        var measureSystem: RocketViewModel.MeasureSystem = .feet
+        var setting: Setting = .height
+        var mode: Mode = .m
         switch indexPath.item {
         case 0:
-            measureSystem = .meter
+            setting = .height
+            mode = viewModel.getMode(forSetting: setting) ?? .m
         case 1:
-            measureSystem = .meter
+            setting = .diameter
+            mode = viewModel.getMode(forSetting: setting) ?? .m
         case 2:
-            measureSystem = .kg
+            setting = .mass
+            mode = viewModel.getMode(forSetting: setting) ?? .kg
         case 3:
-            measureSystem = .kN
+            setting = .thrust
+            mode = viewModel.getMode(forSetting: setting) ?? .kN
         default:
             break
         }
-        let value = viewModel.collectionViewItemValue(for: indexPath, measureSystem: measureSystem)
-        cell.update(value: value, index: indexPath.item)
+        let value = viewModel.collectionViewItemValue(for: indexPath, mode: mode)
+        cell.update(value: value, setting: setting, mode: mode)
         return cell
     }
 }
@@ -136,6 +145,14 @@ extension RocketViewController: RocketViewDelegate {
     }
     
     func didTapSettingsButton() {
-        
+        let viewModel = SettingsViewModel()
+        let viewController = SettingsViewController(viewModel: viewModel, rocketViewControllerDelegate: self)
+        navigationController?.present(viewController, animated: true)
+    }
+}
+
+extension RocketViewController: RocketViewControllerDelegate {
+    func updateMode(forSetting setting: Setting) {
+        rocketView.collectionView.reloadData()
     }
 }

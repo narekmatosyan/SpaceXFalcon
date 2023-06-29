@@ -14,14 +14,20 @@ class RocketListAttributesItemCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .black
-        contentView.layer.borderWidth = 4
+        contentView.layer.borderWidth = Constants.layerBorderWidth
         contentView.layer.borderColor = UIColor.rocketGray.cgColor
-        textLabel?.font = UIFont.boldSystemFont(ofSize: 26)
+        textLabel?.font = UIFont.boldSystemFont(ofSize: Constants.textLabelFont)
         textLabel?.textColor = .gray
         textLabel?.textAlignment = .center
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+extension RocketListAttributesItemCell {
+    enum Constants {
+        static let layerBorderWidth: CGFloat = 4
+        static let textLabelFont: CGFloat = 26
     }
 }

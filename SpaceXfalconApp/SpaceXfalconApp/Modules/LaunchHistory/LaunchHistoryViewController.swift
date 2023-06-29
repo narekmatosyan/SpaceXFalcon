@@ -47,7 +47,8 @@ class LaunchHistoryViewController: UIViewController {
         launchHistoryView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             maker.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            maker.leading.trailing.equalToSuperview()        }
+            maker.leading.trailing.equalToSuperview()
+        }
     }
     
     func fetchLaunches() {
