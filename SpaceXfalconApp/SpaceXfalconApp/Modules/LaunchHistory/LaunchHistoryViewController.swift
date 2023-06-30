@@ -32,7 +32,7 @@ class LaunchHistoryViewController: UIViewController {
         fetchLaunches()
     }
     
-    override func viewWillAppear(_ animated: Bool) { 
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
@@ -79,7 +79,7 @@ extension LaunchHistoryViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int { 1 }
 }
-    
+
 extension LaunchHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 116 }
 }

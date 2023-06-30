@@ -36,7 +36,7 @@ class SettingsView: UIView {
     func setupTitleLabel() {
         addSubview(titleLabel)
         
-        titleLabel.text = "Настройки"
+        titleLabel.text = Constants.TitleLabel.TitleLabelHeaderText
         titleLabel.textColor = .specWhite
         
         titleLabel.snp.makeConstraints { maker in
@@ -49,7 +49,7 @@ class SettingsView: UIView {
         addSubview(tableView)
         
         tableView.register(SettingsItemCell.self, forCellReuseIdentifier: SettingsItemCell.settingsCellIdentifier)
-        tableView.sectionHeaderHeight = Constants.TableView.sectionHeader
+        tableView.sectionHeaderHeight = Constants.TableView.sectionHeaderHeight
         tableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
@@ -62,7 +62,7 @@ class SettingsView: UIView {
     func setupCloseButton() {
         addSubview(closeButton)
         
-        closeButton.setTitle("Закрыть", for: .normal)
+        closeButton.setTitle(Constants.CloseButton.closeButtonTitle, for: .normal)
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         closeButton.snp.makeConstraints { maker in
             maker.trailing.equalToSuperview().inset(Constants.CloseButton.trailingInset)
@@ -82,7 +82,7 @@ extension SettingsView {
         static let topOffset: CGFloat = 18
         
         enum TableView {
-            static let sectionHeader: CGFloat = 50
+            static let sectionHeaderHeight: CGFloat = 50
             static let topOffset: CGFloat = 72
         }
         
@@ -91,6 +91,11 @@ extension SettingsView {
             static let topOffset: CGFloat = 18
             static let width: CGFloat = 71
             static let height: CGFloat = 22
+            static let closeButtonTitle: String = "Закрыть"
+        }
+        
+        enum TitleLabel {
+            static let TitleLabelHeaderText: String = "Настройки"
         }
     }
 }

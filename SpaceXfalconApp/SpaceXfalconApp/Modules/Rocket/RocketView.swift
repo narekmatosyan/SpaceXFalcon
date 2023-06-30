@@ -79,11 +79,11 @@ class RocketView: UIView {
         
         rocketNameLabel.textAlignment = .center
         rocketNameLabel.textColor = .white
-        rocketNameLabel.font = UIFont.boldSystemFont(ofSize: Constants.RocketName.fontSize)
+        rocketNameLabel.font = UIFont.boldSystemFont(ofSize: Constants.RocketNameLabel.titleLabelFontSize)
         
         rocketNameLabel.snp.makeConstraints { maker in
-            maker.top.equalToSuperview().offset(Constants.RocketName.topOffset)
-            maker.leading.equalToSuperview().inset(Constants.RocketName.leadingInset)
+            maker.top.equalToSuperview().offset(Constants.RocketNameLabel.topOffset)
+            maker.leading.equalToSuperview().inset(Constants.RocketNameLabel.leadingInset)
         }
     }
     
@@ -93,7 +93,7 @@ class RocketView: UIView {
         settingsButton.setImage(UIImage(named: "Setting"), for: .normal)
         settingsButton.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)
         settingsButton.snp.makeConstraints { maker in
-            maker.width.height.equalTo(Constants.SettingsButton.widthHeight)
+            maker.width.height.equalTo(Constants.SettingsButton.side)
             maker.trailing.equalToSuperview().inset(Constants.SettingsButton.trailingInset)
             maker.top.equalToSuperview().offset(Constants.SettingsButton.topOffset)
         }
@@ -104,7 +104,7 @@ class RocketView: UIView {
         
         collectionView.backgroundColor = .black
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.contentInset.left = Constants.CollectionView.contentInsertLeft
+        collectionView.contentInset.left = Constants.CollectionView.contentInsetLeft
         collectionView.snp.makeConstraints { maker in
             maker.height.equalTo(Constants.CollectionView.height)
             maker.leading.trailing.equalToSuperview()
@@ -116,7 +116,7 @@ class RocketView: UIView {
         blackView.addSubview(tableView)
         
         tableView.register(RocketAttributeItemCell.self, forCellReuseIdentifier: RocketAttributeItemCell.rocketCellIdentifier)
-        tableView.sectionHeaderHeight = Constants.TableView.sectionHeader
+        tableView.sectionHeaderHeight = Constants.TableView.sectionHeaderHeight
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
         tableView.snp.makeConstraints { maker in
@@ -130,7 +130,7 @@ class RocketView: UIView {
     func setupLaunchHistoryButton() {
         blackView.addSubview(launchHistoryButton)
         
-        launchHistoryButton.layer.cornerRadius = Constants.LaunchHistoryButton.layerCornerRadius
+        launchHistoryButton.layer.cornerRadius = Constants.LaunchHistoryButton.cornerRadius
         launchHistoryButton.backgroundColor = .rocketGray
         launchHistoryButton.setTitle( "История запусков всех ракет", for: .normal)
         launchHistoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: Constants.LaunchHistoryButton.titleLabelFont)
@@ -167,30 +167,35 @@ extension RocketView {
         enum BlackView {
             static let cornerRadius: CGFloat = 32
             static let topOffset: CGFloat = 200
-            }
-        enum RocketName {
+        }
+        
+        enum RocketNameLabel {
             static let topOffset: CGFloat = 48
             static let leadingInset: CGFloat = 32
-            static let fontSize: CGFloat = 24
+            static let titleLabelFontSize: CGFloat = 24
         }
+        
         enum SettingsButton {
-            static let widthHeight: CGFloat = 32
+            static let side: CGFloat = 32
             static let trailingInset: CGFloat = 32
             static let topOffset: CGFloat = 44
         }
+        
         enum CollectionView {
-            static let contentInsertLeft: CGFloat = 32
+            static let contentInsetLeft: CGFloat = 32
             static let height: CGFloat = 96
             static let topOffset: CGFloat = 32
         }
+        
         enum TableView {
-            static let sectionHeader: CGFloat = 50
+            static let sectionHeaderHeight: CGFloat = 50
             static let leadingOffset: CGFloat = 32
             static let trailingInset: CGFloat = 32
             static let topOffset: CGFloat = 40
         }
+        
         enum LaunchHistoryButton {
-            static let layerCornerRadius: CGFloat = 16
+            static let cornerRadius: CGFloat = 16
             static let titleLabelFont: CGFloat = 20
             static let height: CGFloat = 60
             static let leadingOffset: CGFloat = 32

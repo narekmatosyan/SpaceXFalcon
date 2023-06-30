@@ -9,14 +9,14 @@ import UIKit
 
 class RocketListAttributesItemCell: UITableViewCell {
     static let rocketListCellIdentifier = "RocketListAttributesItemCellIdentifier"
-        
+    
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .black
-        contentView.layer.borderWidth = Constants.layerBorderWidth
+        contentView.layer.borderWidth = Constants.borderWidth
         contentView.layer.borderColor = UIColor.rocketGray.cgColor
-        textLabel?.font = UIFont.boldSystemFont(ofSize: Constants.textLabelFont)
+        textLabel?.font = UIFont.boldSystemFont(ofSize: Constants.textLabelFontSize)
         textLabel?.textColor = .gray
         textLabel?.textAlignment = .center
     }
@@ -26,8 +26,9 @@ class RocketListAttributesItemCell: UITableViewCell {
     }
 }
 extension RocketListAttributesItemCell {
+    
     enum Constants {
-        static let layerBorderWidth: CGFloat = 4
-        static let textLabelFont: CGFloat = 26
+        static let borderWidth: CGFloat = 4
+        static let textLabelFontSize: CGFloat = 26
     }
 }

@@ -18,7 +18,7 @@ class RocketParameterItemCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        layer.cornerRadius = Constants.layerCornerRadius
+        layer.cornerRadius = Constants.cornerRadius
         backgroundColor = .rocketGray
         
         setupContainerView()
@@ -39,7 +39,7 @@ class RocketParameterItemCell: UICollectionViewCell {
         containerView.addSubview(valueLabel)
         
         valueLabel.textColor = .white
-        valueLabel.font = UIFont(name: "LabGrotesque-Bold", size: Constants.ValueLabel.labelFont)
+        valueLabel.font = UIFont(name: "LabGrotesque-Bold", size: Constants.ValueLabel.labelFontSize)
         valueLabel.textAlignment = .center
         valueLabel.snp.makeConstraints { maker in
             maker.leading.trailing.top.equalToSuperview()
@@ -50,7 +50,7 @@ class RocketParameterItemCell: UICollectionViewCell {
         containerView.addSubview(titleLabel)
         
         titleLabel.textColor = .darkGray
-        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: Constants.TitleLabel.titleFont)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: Constants.TitleLabel.titleFontSize)
         titleLabel.textAlignment = .center
         titleLabel.snp.makeConstraints { maker in
             maker.leading.trailing.bottom.equalToSuperview()
@@ -65,7 +65,7 @@ class RocketParameterItemCell: UICollectionViewCell {
     func update(value: Double, setting: Setting, mode: Mode) {
         valueLabel.text = String(value)
         if setting == .thrust {
-            titleLabel.text = "Нагрузка" + ", \(mode.rawValue)"
+            titleLabel.text = Constants.TitleLabel.titleText + ", \(mode.rawValue)"
         } else {
             titleLabel.text = setting.rawValue + ", \(mode.rawValue)"
         }
@@ -73,13 +73,15 @@ class RocketParameterItemCell: UICollectionViewCell {
 }
 extension RocketParameterItemCell {
     enum Constants {
-        static let layerCornerRadius: CGFloat = 32
+        static let cornerRadius: CGFloat = 32
         
         enum ValueLabel {
-            static let labelFont: CGFloat = 16
+            static let labelFontSize: CGFloat = 16
         }
+        
         enum TitleLabel {
-            static let titleFont: CGFloat = 14
+            static let titleFontSize: CGFloat = 14
+            static let titleText: String = "Нагрузка"
         }
     }
 }

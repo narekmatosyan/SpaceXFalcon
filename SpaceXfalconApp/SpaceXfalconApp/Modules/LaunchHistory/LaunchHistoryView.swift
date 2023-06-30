@@ -28,19 +28,19 @@ class LaunchHistoryView: UIView {
         addSubview(tableView)
         
         tableView.register(LaunchHistoryAttributesItemCell.self, forCellReuseIdentifier: LaunchHistoryAttributesItemCell.launchHistoryCellIdentifier)
-        tableView.sectionHeaderHeight = Constants.sectionHeader
+        tableView.sectionHeaderHeight = TableView.sectionHeader
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
         tableView.snp.makeConstraints { maker in
             maker.top.bottom.equalToSuperview()
-            maker.leading.equalToSuperview().offset(Constants.leadingOffset)
-            maker.trailing.equalToSuperview().inset(Constants.trailingInset)
+            maker.leading.equalToSuperview().offset(TableView.leadingOffset)
+            maker.trailing.equalToSuperview().inset(TableView.trailingInset)
         }
     }
 }
 
 extension LaunchHistoryView {
-    enum Constants {
+    enum TableView {
         static let sectionHeader: CGFloat = 50
         static let leadingOffset: CGFloat = 32
         static let trailingInset: CGFloat = 32

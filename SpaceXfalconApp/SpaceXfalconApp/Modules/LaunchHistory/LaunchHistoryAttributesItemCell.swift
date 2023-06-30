@@ -16,15 +16,15 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
     let launchStateImageView = UIImageView()
     let labelsStackView = UIStackView()
     let containerView = UIView()
-        
+    
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .black
         contentView.layer.borderColor = UIColor.black.cgColor
-        contentView.layer.cornerRadius = Constants.layer
+        contentView.layer.cornerRadius = Constants.cornerRadius
         backgroundColor = .black
-        textLabel?.font = UIFont.boldSystemFont(ofSize: Constants.textLabelFont)
+        textLabel?.font = UIFont.boldSystemFont(ofSize: Constants.textSize)
         textLabel?.textColor = .lightGray
         textLabel?.textAlignment = .center
         selectionStyle = .none
@@ -40,13 +40,13 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
         contentView.addSubview(containerView)
         
         containerView.backgroundColor = .rocketGray
-        containerView.layer.cornerRadius = Constants.ContainerView.layerCornerRadius
+        containerView.layer.cornerRadius = Constants.ContainerView.cornerRadius
         
         containerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview().offset(Constants.ContainerView.topOffset)
             make.bottom.equalToSuperview().inset(Constants.ContainerView.bottomInset)
-        }
+    }
         
         setupLabelsStackView()
         setupLaunchStateImageView()
@@ -59,7 +59,7 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
         
         labelsStackView.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
-            maker.leading.equalToSuperview().offset(Constants.LabelsStackView.leadongOffset)
+            maker.leading.equalToSuperview().offset(Constants.LabelsStackView.leadingOffset)
         }
         
         setupTitleLabel()
@@ -87,11 +87,11 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
         containerView.addSubview(launchStateImageView)
         
         launchStateImageView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(Constants.LauchStateImageView.trailingInset)
-            make.width.height.equalTo(Constants.LauchStateImageView.width)
+            make.trailing.equalToSuperview().inset(Constants.LaunchStateImageView.trailingInset)
+            make.width.height.equalTo(Constants.LaunchStateImageView.width)
             make.centerY.equalToSuperview()
         }
-            
+        
     }
     
     func update(withLaunch launch: LaunchModel) {
@@ -105,22 +105,25 @@ class LaunchHistoryAttributesItemCell: UITableViewCell {
 
 extension LaunchHistoryAttributesItemCell {
     enum Constants {
-        static let layer: CGFloat = 24
-        static let textLabelFont: CGFloat = 20
+        static let cornerRadius: CGFloat = 24
+        static let textSize: CGFloat = 20
         
         enum ContainerView {
-            static let layerCornerRadius: CGFloat = 24
+            static let cornerRadius: CGFloat = 24
             static let topOffset: CGFloat = 8
             static let bottomInset: CGFloat = 8
         }
+        
         enum LabelsStackView {
-            static let leadongOffset: CGFloat = 24
+            static let leadingOffset: CGFloat = 24
         }
+        
         enum TitleLabel {
             static let numberOfLines: CGFloat = 0
             static let width: CGFloat = 200
         }
-        enum LauchStateImageView {
+        
+        enum LaunchStateImageView  {
             static let trailingInset: CGFloat = 32
             static let width: CGFloat = 32
         }

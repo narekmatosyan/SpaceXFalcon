@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Настройки"
+        title = Constants.title
         
         settingsView.delegate = self
         settingsView.tableView.dataSource = self
@@ -93,5 +93,11 @@ extension SettingsViewController: SettingsItemCellDelegate {
     func didSegmentedControlTapped(withSetting setting: Setting, mode: Mode) {
         viewModel.saveMode(forSetting: setting, mode: mode)
         rocketViewControllerDelegate.updateMode(forSetting: setting)
+    }
+}
+
+extension SettingsViewController {
+    enum Constants {
+        static let title: String = "Настройки"
     }
 }

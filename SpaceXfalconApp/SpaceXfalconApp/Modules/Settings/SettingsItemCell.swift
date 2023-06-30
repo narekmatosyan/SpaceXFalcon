@@ -31,14 +31,14 @@ class SettingsItemCell: UITableViewCell {
     static let settingsCellIdentifier = "SettingsItemCellIdentifier"
     
     var delegate: SettingsItemCellDelegate?
-        
+    
     let segmentedControl = UISegmentedControl(items: ["", ""])
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .black
-        textLabel?.font = UIFont.systemFont(ofSize: Constants.textLabelFont)
+        textLabel?.font = UIFont.systemFont(ofSize: Constants.textLabelFontSize)
         textLabel?.textColor = .specWhite
         
         setupSegmentedControl()
@@ -61,7 +61,6 @@ class SettingsItemCell: UITableViewCell {
             maker.centerY.equalToSuperview()
             maker.width.equalTo(Constants.SegmentedControl.width)
             maker.height.equalTo(Constants.SegmentedControl.height)
-            
         }
     }
     
@@ -81,7 +80,7 @@ class SettingsItemCell: UITableViewCell {
             mode = segmentedControl.selectedSegmentIndex == 0 ? .kg : .lb
         }
         
-        let index = segmentedControl.selectedSegmentIndex
+        _ = segmentedControl.selectedSegmentIndex
         delegate?.didSegmentedControlTapped(withSetting: setting, mode: mode)
     }
     
@@ -106,7 +105,7 @@ class SettingsItemCell: UITableViewCell {
 
 extension SettingsItemCell {
     enum Constants {
-        static let textLabelFont: CGFloat = 18
+        static let textLabelFontSize: CGFloat = 18
         
         enum SegmentedControl {
             static let trailingInset: CGFloat = 28

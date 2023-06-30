@@ -70,7 +70,7 @@ extension RocketViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RocketAttributeItemCell.rocketCellIdentifier, for: indexPath) as! RocketAttributeItemCell
-              
+        
         if indexPath.section == 0 {
             cell.update(cellType: .item,
                         title: firstSectionTitles[indexPath.row],
