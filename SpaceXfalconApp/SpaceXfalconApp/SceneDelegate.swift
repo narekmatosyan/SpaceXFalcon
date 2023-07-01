@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationBarAppearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor.white
         ]
-        navigationBarAppearance.backgroundColor = .black
+        navigationBarAppearance.backgroundColor = .rocketGray
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance

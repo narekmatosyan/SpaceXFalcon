@@ -12,12 +12,11 @@ class LaunchHistoryViewModel {
     private let spaceXDataLaunches = SpaceXService.shared
     var launches: [LaunchModel] = []
     
-    
     func fetchLaunches(completion: @escaping (Result<[LaunchModel],Error>) -> Void) {
         SpaceXService.shared.fetchLaunches { [weak self] result in
             switch result {
             case .success(let launches):
-                 self?.launches = launches
+                self?.launches = launches
                 completion(.success([]))
             case .failure(let error):
                 completion(.failure(error))
@@ -26,9 +25,8 @@ class LaunchHistoryViewModel {
     }
     
     func rocketLaunchSafety(at index: Int) -> LaunchModel? {
-        guard index >= 0 && index < launches.count else {
-            return nil
-        }
+        guard index >= 0 && index < launches.count else { return nil }
+        
         return launches[index]
     }
 }

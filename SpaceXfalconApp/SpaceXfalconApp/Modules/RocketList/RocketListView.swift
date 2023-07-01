@@ -32,13 +32,20 @@ class RocketListView: UIView {
         addSubview(tableView)
         
         tableView.register(RocketListAttributesItemCell.self, forCellReuseIdentifier: RocketListAttributesItemCell.rocketListCellIdentifier)
-        tableView.sectionHeaderHeight = 50
-        tableView.layer.cornerRadius = 24
-        tableView.backgroundColor = .black
+        tableView.sectionHeaderHeight = Constants.sectionHeaderHeight
+        tableView.layer.cornerRadius = Constants.cornerRadius
+        tableView.backgroundColor = .rocketGray
         tableView.showsVerticalScrollIndicator = false
         tableView.snp.makeConstraints { maker in
             maker.top.equalTo(safeAreaInsets.top)
             maker.leading.trailing.bottom.equalToSuperview()
         }
+    }
+}
+
+extension RocketListView {
+    enum Constants {
+        static let sectionHeaderHeight: CGFloat = 50
+        static let cornerRadius: CGFloat = 24
     }
 }

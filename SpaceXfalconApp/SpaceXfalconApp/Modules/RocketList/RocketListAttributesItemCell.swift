@@ -9,19 +9,26 @@ import UIKit
 
 class RocketListAttributesItemCell: UITableViewCell {
     static let rocketListCellIdentifier = "RocketListAttributesItemCellIdentifier"
-        
+    
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .black
-        contentView.layer.borderWidth = 4
+        contentView.layer.borderWidth = Constants.borderWidth
         contentView.layer.borderColor = UIColor.rocketGray.cgColor
-        textLabel?.font = UIFont.boldSystemFont(ofSize: 26)
+        textLabel?.font = UIFont.boldSystemFont(ofSize: Constants.textLabelFontSize)
         textLabel?.textColor = .gray
         textLabel?.textAlignment = .center
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+extension RocketListAttributesItemCell {
+    
+    enum Constants {
+        static let borderWidth: CGFloat = 4
+        static let textLabelFontSize: CGFloat = 26
     }
 }

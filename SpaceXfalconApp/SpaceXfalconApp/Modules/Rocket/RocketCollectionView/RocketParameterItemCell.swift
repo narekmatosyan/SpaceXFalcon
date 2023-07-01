@@ -11,8 +11,6 @@ import SnapKit
 class RocketParameterItemCell: UICollectionViewCell {
     static let rocketParameterIdentifier = "RocketParameterItemCellIdentifier"
     
-    let titles = ["Высота, m", "Диаметр, m", "Масса, kg", "Нагрузка, kg"]
-    
     let valueLabel = UILabel()
     let titleLabel = UILabel()
     let containerView = UIView()
@@ -20,7 +18,7 @@ class RocketParameterItemCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        layer.cornerRadius = 32
+        layer.cornerRadius = Constants.cornerRadius
         backgroundColor = .rocketGray
         
         setupContainerView()
@@ -41,7 +39,7 @@ class RocketParameterItemCell: UICollectionViewCell {
         containerView.addSubview(valueLabel)
         
         valueLabel.textColor = .white
-        valueLabel.font = UIFont(name: "LabGrotesque-Bold", size: 16)
+        valueLabel.font = UIFont(name: "LabGrotesque-Bold", size: Constants.ValueLabel.labelFontSize)
         valueLabel.textAlignment = .center
         valueLabel.snp.makeConstraints { maker in
             maker.leading.trailing.top.equalToSuperview()
@@ -52,7 +50,7 @@ class RocketParameterItemCell: UICollectionViewCell {
         containerView.addSubview(titleLabel)
         
         titleLabel.textColor = .darkGray
-        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: 14)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: Constants.TitleLabel.titleFontSize)
         titleLabel.textAlignment = .center
         titleLabel.snp.makeConstraints { maker in
             maker.leading.trailing.bottom.equalToSuperview()
@@ -64,12 +62,26 @@ class RocketParameterItemCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(value: Double, index: Int) {
-        if index == 2 || index == 3 {
-            valueLabel.text = String(Int(value))
+    func update(value: Double, setting: Setting, mode: Mode) {
+        valueLabel.text = String(value)
+        if setting == .thrust {
+            titleLabel.text = Constants.TitleLabel.titleText + ", \(mode.rawValue)"
         } else {
-            valueLabel.text = String(value)
+            titleLabel.text = setting.rawValue + ", \(mode.rawValue)"
         }
-        titleLabel.text = titles[index]
+    }
+}
+extension RocketParameterItemCell {
+    enum Constants {
+        static let cornerRadius: CGFloat = 32
+        
+        enum ValueLabel {
+            static let labelFontSize: CGFloat = 16
+        }
+        
+        enum TitleLabel {
+            static let titleFontSize: CGFloat = 14
+            static let titleText: String = "Нагрузка"
+        }
     }
 }

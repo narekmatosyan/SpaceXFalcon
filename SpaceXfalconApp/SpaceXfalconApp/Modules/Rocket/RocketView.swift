@@ -55,14 +55,14 @@ class RocketView: UIView {
         rocketImageView.snp.makeConstraints { maker in
             maker.top.width.equalToSuperview()
             maker.centerX.equalToSuperview()
-            maker.height.equalTo(400)
+            maker.height.equalTo(Constants.rocketImageViewHeight)
         }
     }
     
     func setupBlackView() {
         addSubview(blackView)
         
-        blackView.layer.cornerRadius = 32
+        blackView.layer.cornerRadius = Constants.BlackView.cornerRadius
         blackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         blackView.backgroundColor = .black
         
@@ -70,7 +70,7 @@ class RocketView: UIView {
             maker.width.equalToSuperview()
             maker.bottom.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
-            maker.top.equalToSuperview().offset(200)
+            maker.top.equalToSuperview().offset(Constants.BlackView.topOffset)
         }
     }
     
@@ -79,11 +79,11 @@ class RocketView: UIView {
         
         rocketNameLabel.textAlignment = .center
         rocketNameLabel.textColor = .white
-        rocketNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        rocketNameLabel.font = UIFont.boldSystemFont(ofSize: Constants.RocketNameLabel.titleLabelFontSize)
         
         rocketNameLabel.snp.makeConstraints { maker in
-            maker.top.equalToSuperview().offset(48)
-            maker.leading.equalToSuperview().inset(32)
+            maker.top.equalToSuperview().offset(Constants.RocketNameLabel.topOffset)
+            maker.leading.equalToSuperview().inset(Constants.RocketNameLabel.leadingInset)
         }
     }
     
@@ -91,11 +91,11 @@ class RocketView: UIView {
         blackView.addSubview(settingsButton)
         
         settingsButton.setImage(UIImage(named: "Setting"), for: .normal)
-        
+        settingsButton.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)
         settingsButton.snp.makeConstraints { maker in
-            maker.width.height.equalTo(32)
-            maker.trailing.equalToSuperview().inset(32)
-            maker.top.equalToSuperview().offset(44)
+            maker.width.height.equalTo(Constants.SettingsButton.side)
+            maker.trailing.equalToSuperview().inset(Constants.SettingsButton.trailingInset)
+            maker.top.equalToSuperview().offset(Constants.SettingsButton.topOffset)
         }
     }
     
@@ -104,10 +104,11 @@ class RocketView: UIView {
         
         collectionView.backgroundColor = .black
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset.left = Constants.CollectionView.contentInsetLeft
         collectionView.snp.makeConstraints { maker in
-            maker.height.equalTo(96)
-            maker.leading.trailing.equalTo(32)
-            maker.top.equalTo(rocketNameLabel.snp.bottom).offset(32)
+            maker.height.equalTo(Constants.CollectionView.height)
+            maker.leading.trailing.equalToSuperview()
+            maker.top.equalTo(rocketNameLabel.snp.bottom).offset(Constants.CollectionView.topOffset)
         }
     }
     
@@ -115,32 +116,32 @@ class RocketView: UIView {
         blackView.addSubview(tableView)
         
         tableView.register(RocketAttributeItemCell.self, forCellReuseIdentifier: RocketAttributeItemCell.rocketCellIdentifier)
-        tableView.sectionHeaderHeight = 50
+        tableView.sectionHeaderHeight = Constants.TableView.sectionHeaderHeight
         tableView.backgroundColor = .black
         tableView.showsVerticalScrollIndicator = false
         tableView.snp.makeConstraints { maker in
             maker.width.equalTo(bounds.width - 32 * 2)
-            maker.leading.equalToSuperview().offset(32)
-            maker.trailing.equalToSuperview().inset(32)
-            maker.top.equalTo(collectionView.snp.bottom).offset(40)
+            maker.leading.equalToSuperview().offset(Constants.TableView.leadingOffset)
+            maker.trailing.equalToSuperview().inset(Constants.TableView.trailingInset)
+            maker.top.equalTo(collectionView.snp.bottom).offset(Constants.TableView.topOffset)
         }
     }
     
     func setupLaunchHistoryButton() {
         blackView.addSubview(launchHistoryButton)
         
-        launchHistoryButton.layer.cornerRadius = 16
+        launchHistoryButton.layer.cornerRadius = Constants.LaunchHistoryButton.cornerRadius
         launchHistoryButton.backgroundColor = .rocketGray
         launchHistoryButton.setTitle( "История запусков всех ракет", for: .normal)
-        launchHistoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        launchHistoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: Constants.LaunchHistoryButton.titleLabelFont)
         launchHistoryButton.addTarget(self, action: #selector(didLaunchHistoryButtonTapped), for: .touchUpInside)
         
         launchHistoryButton.snp.makeConstraints { maker in
-            maker.height.equalTo(60)
-            maker.leading.equalToSuperview().offset(32)
-            maker.trailing.equalToSuperview().inset(32)
-            maker.top.equalTo(tableView.snp.bottom).offset(16)
-            maker.bottom.equalToSuperview().inset(40)
+            maker.height.equalTo(Constants.LaunchHistoryButton.height)
+            maker.leading.equalToSuperview().offset(Constants.LaunchHistoryButton.leadingOffset)
+            maker.trailing.equalToSuperview().inset(Constants.LaunchHistoryButton.trailingInset)
+            maker.top.equalTo(tableView.snp.bottom).offset(Constants.LaunchHistoryButton.topOffset)
+            maker.bottom.equalToSuperview().inset(Constants.LaunchHistoryButton.bottomInset)
         }
     }
     
@@ -153,5 +154,54 @@ class RocketView: UIView {
     
     @objc func didLaunchHistoryButtonTapped(_ sender: UIButton) {
         delegate?.didTapLaunchHistoryButton()
+    }
+    
+    @objc func didTapSettingsButton(_ sender: UIButton) {
+        delegate?.didTapSettingsButton()
+    }
+}
+extension RocketView {
+    enum Constants {
+        static let rocketImageViewHeight: CGFloat = 400
+        
+        enum BlackView {
+            static let cornerRadius: CGFloat = 32
+            static let topOffset: CGFloat = 200
+        }
+        
+        enum RocketNameLabel {
+            static let topOffset: CGFloat = 48
+            static let leadingInset: CGFloat = 32
+            static let titleLabelFontSize: CGFloat = 24
+        }
+        
+        enum SettingsButton {
+            static let side: CGFloat = 32
+            static let trailingInset: CGFloat = 32
+            static let topOffset: CGFloat = 44
+        }
+        
+        enum CollectionView {
+            static let contentInsetLeft: CGFloat = 32
+            static let height: CGFloat = 96
+            static let topOffset: CGFloat = 32
+        }
+        
+        enum TableView {
+            static let sectionHeaderHeight: CGFloat = 50
+            static let leadingOffset: CGFloat = 32
+            static let trailingInset: CGFloat = 32
+            static let topOffset: CGFloat = 40
+        }
+        
+        enum LaunchHistoryButton {
+            static let cornerRadius: CGFloat = 16
+            static let titleLabelFont: CGFloat = 20
+            static let height: CGFloat = 60
+            static let leadingOffset: CGFloat = 32
+            static let trailingInset: CGFloat = 32
+            static let topOffset: CGFloat = 16
+            static let bottomInset: CGFloat = 40
+        }
     }
 }
