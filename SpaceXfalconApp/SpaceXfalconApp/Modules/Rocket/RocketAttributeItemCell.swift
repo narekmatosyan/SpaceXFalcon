@@ -21,8 +21,8 @@ class RocketAttributeItemCell: UITableViewCell {
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .black
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(valueLabel)
+        
+        selectionStyle = .none
         
         setupTitleLabel()
         setupValueLabel()
@@ -33,8 +33,9 @@ class RocketAttributeItemCell: UITableViewCell {
     }
     
     func setupTitleLabel() {
+        contentView.addSubview(titleLabel)
         titleLabel.textColor = .lightGray
-        titleLabel.font = UIFont(name: "Lab Grotesque", size: 16)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: TitleLabel.titleLabelFontSize)
         titleLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.leading.equalToSuperview()
@@ -42,8 +43,9 @@ class RocketAttributeItemCell: UITableViewCell {
     }
     
     func setupValueLabel() {
+        contentView.addSubview(valueLabel)
         valueLabel.textColor = .specWhite
-        valueLabel.font = UIFont(name: "Lab Grotesque", size: 16)
+        valueLabel.font = UIFont(name: "LabGrotesque-Regular", size: ValueLabel.valueLabelFontSize)
         valueLabel.snp.makeConstraints { maker in
             maker.centerY.equalToSuperview()
             maker.trailing.equalToSuperview()
@@ -53,7 +55,7 @@ class RocketAttributeItemCell: UITableViewCell {
     func update(cellType: CellType, title: String, value: String? = nil) {
         switch cellType {
         case .header:
-            titleLabel.font = UIFont(name: "LabGrotesque-Bold", size: 16)
+            titleLabel.font = UIFont(name: "LabGrotesque-Bold", size: Constants.titleLabelFontSize)
             titleLabel.textColor = .specWhite
         case .item:
             break
@@ -65,6 +67,25 @@ class RocketAttributeItemCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        titleLabel.font = UIFont(name: "Lab Grotesque", size: 16)
+        titleLabel.font = UIFont(name: "LabGrotesque-Regular", size: TitleLabelFontSize.titleLabelFontSize)
+    }
+}
+
+extension RocketAttributeItemCell {
+    
+    enum TitleLabel {
+        static let titleLabelFontSize: CGFloat = 16
+    }
+    
+    enum ValueLabel {
+        static let valueLabelFontSize: CGFloat = 16
+    }
+    
+    enum Constants {
+        static let titleLabelFontSize: CGFloat = 16
+    }
+    
+    enum TitleLabelFontSize {
+        static let titleLabelFontSize: CGFloat = 16
     }
 }
